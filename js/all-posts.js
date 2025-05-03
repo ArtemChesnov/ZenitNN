@@ -1,4 +1,4 @@
-fetch("/data/news.json")
+fetch("../data/news.json")
   .then((response) => response.json())
   .then((newsData) => {
     const slider = document.getElementById("news");
@@ -6,7 +6,7 @@ fetch("/data/news.json")
     newsData.forEach((news) => {
       const slide = document.createElement("a");
       slide.className = "news__item";
-      slide.href = `/pages/news-posts/${news.id}.html`;
+      slide.href = `../pages/news-posts/${news.id}.html`;
 
       const img = document.createElement("img");
       img.className = "news__image";
