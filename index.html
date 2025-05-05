@@ -1047,18 +1047,18 @@
       </div>
     </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll("[href], [src], [action]").forEach((el) => {
-          ["href", "src", "action"].forEach((attr) => {
-            const value = el.getAttribute(attr);
-            if (value && value.startsWith("/")) {
-              el.setAttribute(attr, value.replace(/^\/+/, "../"));
-            }
-          });
-        });
-      });
-    </script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('[href], [src], [action]').forEach(el => {
+    ['href', 'src', 'action'].forEach(attr => {
+      const value = el.getAttribute(attr);
+      if (value && value.startsWith('/')) {
+        el.setAttribute(attr, value.replace(/^\/+/, ''));
+      }
+    });
+  });
+});
+</script>
 
     <script src="/js/animation.js"></script>
     <script src="/js/modal.js"></script>
