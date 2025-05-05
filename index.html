@@ -1062,7 +1062,16 @@
       </div>
     </div>
 
-  </script>
+ <script>
+  document.querySelectorAll('[href], [src], [action]').forEach(el => {
+    ['href', 'src', 'action'].forEach(attr => {
+      const val = el.getAttribute(attr);
+      if (val && val.startsWith('/')) {
+        el.setAttribute(attr, val.replace(/^\/+/, ''));
+      }
+    });
+  });
+</script>
   <script>
     function setVhVariable() {
 let vh = window.innerHeight * 0.01;
@@ -1073,14 +1082,14 @@ setVhVariable();
 window.addEventListener('resize', setVhVariable);
   </script>
 
-    <script src="/js/animation.js"></script>
-    <script src="/js/modal.js"></script>
-    <script src="/js/running-line.js"></script>
-    <script src="/js/post-form.js"></script>
-    <script src="/js/toggle.js"></script>
-    <script src="/js/header-burger.js"></script>
-    <script src="/js/home-news.js"></script>
-    <script src="/js/phone-widget.js"></script>
-    <script src="/js/preloader.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/running-line.js"></script>
+    <script src="js/post-form.js"></script>
+    <script src="js/toggle.js"></script>
+    <script src="js/header-burger.js"></script>
+    <script src="js/home-news.js"></script>
+    <script src="js/phone-widget.js"></script>
+    <script src="js/preloader.js"></script>
   </body>
 </html>
