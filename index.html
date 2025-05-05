@@ -1048,16 +1048,14 @@
     </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('[href], [src], [action]').forEach(el => {
     ['href', 'src', 'action'].forEach(attr => {
-      const value = el.getAttribute(attr);
-      if (value && value.startsWith('/')) {
-        el.setAttribute(attr, value.replace(/^\/+/, ''));
+      const val = el.getAttribute(attr);
+      if (val && val.startsWith('/')) {
+        el.setAttribute(attr, val.replace(/^\/+/, ''));
       }
     });
   });
-});
 </script>
 
     <script src="/js/animation.js"></script>
