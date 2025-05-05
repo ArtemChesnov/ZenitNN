@@ -1498,7 +1498,7 @@ a {
 }
 @media (max-width: 430px) {
   .coach__card {
-    min-width: 99.3%;
+   min-width: 98.5%;
     max-width: 320px;
     height: 360px;
   }
