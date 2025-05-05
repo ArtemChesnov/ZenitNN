@@ -1502,6 +1502,13 @@ a {
     max-width: 320px;
     height: 360px;
   }
+
+  @media (max-width: 360px) {
+  .coach__card {
+    min-width: 98.5%;
+    max-width: 320px;
+    height: 360px;
+  }
 }
 .coach__card--left .card.last {
   grid-column: 1/2;
@@ -1567,6 +1574,7 @@ a {
     line-height: 100%;
     font-style: normal;
     width: 230px;
+    margin-top: 105px;
   }
 }
 @media (max-width: 430px) {
