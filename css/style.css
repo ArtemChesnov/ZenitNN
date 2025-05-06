@@ -1052,12 +1052,12 @@ a {
   position: relative;
 }
 .hero__line {
-  position: absolute;
-  bottom: -5px;
-  left: -1915px;
-  width: 5755px;
-  height: 46px;
-  z-index: 5;
+   position: absolute;
+    bottom: -5px;
+    left: -118px;
+    width: 2033px;
+    height: 46px;
+    z-index: 5;
 }
 @media (max-width: 780px) {
   .hero__line {
