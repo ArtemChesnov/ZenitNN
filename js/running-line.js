@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const totalWidth = inner.scrollWidth;
 
   // Устанавливаем длительность на основе ширины
-  const speed = 200; // пикселей в секунду
+  const speed = 50; // пикселей в секунду
   const duration = totalWidth / speed;
 
   // Применяем к обоим элементам
