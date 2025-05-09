@@ -1064,7 +1064,7 @@
           val.startsWith("/") &&
           !val.startsWith("//")
         ) {
-          el.setAttribute(attr, "../" + val.slice(1));
+          el.setAttribute(attr, "./" + val.slice(1));
         }
       });
     });
