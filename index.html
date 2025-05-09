@@ -1048,28 +1048,27 @@
     <script src="/js/phone-widget.js"></script>
     <script src="/js/preloader.js"></script>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const isGithubPages = location.hostname === "artemchesnov.github.io";
-        const prefix = "/ZenitNN/";
-        const attrs = ["href", "src"];
 
-        if (!isGithubPages) return;
+     <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const isGithubPages = location.hostname === "artemchesnov.github.io";
+    const attrs = ["href", "src"];
 
-        document.querySelectorAll("[href], [src]").forEach((el) => {
-          attrs.forEach((attr) => {
-            const val = el.getAttribute(attr);
-            if (
-              val &&
-              val.startsWith("/") &&
-              !val.startsWith("//") &&
-              !val.startsWith(prefix)
-            ) {
-              el.setAttribute(attr, prefix + val.slice(1));
-            }
-          });
-        });
+    if (!isGithubPages) return;
+
+    document.querySelectorAll("[href], [src]").forEach((el) => {
+      attrs.forEach((attr) => {
+        const val = el.getAttribute(attr);
+        if (
+          val &&
+          val.startsWith("/") &&
+          !val.startsWith("//")
+        ) {
+          el.setAttribute(attr, "../" + val.slice(1));
+        }
       });
-    </script>
+    });
+  });
+</script>
   </body>
 </html>
