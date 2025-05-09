@@ -1049,12 +1049,19 @@
     <script src="/js/preloader.js"></script>
 
 
-     <script>
+<script>
   document.addEventListener("DOMContentLoaded", () => {
-    const isGithubPages = location.hostname === "artemchesnov.github.io";
+    const isGithubPages = location.hostname.endsWith("github.io");
     const attrs = ["href", "src"];
 
     if (!isGithubPages) return;
+
+    // Считаем уровень вложенности: сколько "/" после hostname
+    const pathDepth = location.pathname
+      .split("/")
+      .filter((part) => part.length > 0).length - 1;
+
+    const prefix = pathDepth === 0 ? "" : "../".repeat(pathDepth);
 
     document.querySelectorAll("[href], [src]").forEach((el) => {
       attrs.forEach((attr) => {
@@ -1064,11 +1071,12 @@
           val.startsWith("/") &&
           !val.startsWith("//")
         ) {
-          el.setAttribute(attr, "./" + val.slice(1));
+          el.setAttribute(attr, prefix + val.slice(1));
         }
       });
     });
   });
 </script>
+
   </body>
 </html>
