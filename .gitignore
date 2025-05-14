@@ -1,0 +1,12 @@
+.hintrc
+
+send.php
+mail_config.php
+
+pages/admin/
+
+PHPMailer/
+
+scss/
+
+fix.js

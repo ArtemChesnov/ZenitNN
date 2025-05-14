@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Футбольная школа Зенит – Чемпионика для детей от 3 до 16 лет в Нижнем Новгороде. Пробные тренировки, лицензированные тренеры, турниры."
+    />
+    <meta
+      name="keywords"
+      content="детская футбольная школа, детский футбол Нижний Новгород, футбол для детей, секции по футболу, Зенит Чемпионика, тренировки для детей"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/ZenitNN/img/favicon/favicon 32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/ZenitNN/img/favicon/favicon 16x16.png"
+    />
+    <link rel="stylesheet" href="/ZenitNN/css/style.css" />
+
+    <title>
+      Зенит – Чемпионика | Детская футбольная школа в Нижнем Новгороде
+    </title>
+  </head>
+
+  <body class="page">
+    <header class="header" aria-label="Главное меню">
+      <div class="container header__wrapper">
+        <a href="/ZenitNN/index.html">
+          <img
+            class="header__logo"
+            src="/ZenitNN/img/zenit-logo.webp"
+            alt="Логотип Зенит"
+          />
+        </a>
+
+        <div class="header__burger" id="burger" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </div>
+
+        <nav class="header__navigation" id="navigation">
+          <ul class="header__navigation-list">
+            <li>
+              <a class="header__navigation-link" href="/ZenitNN/pages/about.html"
+                >О школе</a
+              >
+            </li>
+            <li>
+              <a class="header__navigation-link" href="/ZenitNN/pages/coach.html"
+                >Тренеры</a
+              >
+            </li>
+            <li class="header__navigation-item--dropdown" id="dropdownToggle">
+              <a
+                data-offset="300"
+                href="/ZenitNN/index.html#groups"
+                class="header__navigation-link scroll-link"
+                >Возрастные группы</a
+              >
+            </li>
+            <li>
+              <a
+                class="header__navigation-link scroll-link"
+                data-offset="300"
+                href="/ZenitNN/index.html#branches"
+                >Филиалы</a
+              >
+            </li>
+            <li>
+              <a class="header__navigation-link" href="/ZenitNN/pages/teams.html"
+                >Сборные</a
+              >
+            </li>
+            <li>
+              <a class="header__navigation-link" href="/ZenitNN/pages/news.html"
+                >Новости</a
+              >
+            </li>
+          </ul>
+          <ul class="header__phone-list">
+            <li class="header__phone-item">
+              <a href="tel:+79302999998" class="header__phone-link"
+                >+7 (930) 299-99-98 — ул.Школьная, 32А</a
+              >
+            </li>
+            <li>
+              <a href="tel:+79302999997" class="header__phone-link"
+                >+7 (930) 299-99-97 — Тимирязева, 31А World Class Пушкинский</a
+              >
+            </li>
+            <li>
+              <a href="tel:+79302999995" class="header__phone-link"
+                >+7 (930) 299-99-95 — ул.Бринского, 4 школа им.Михалкова</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header__info">
+          <!-- Иконка телефона -->
+          <button class="phone-button" aria-label="Позвонить" id="phoneButton">
+            <svg
+              class="phone-icon"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M462.5 468.2l-33.9 33.9c-6.1 6-23.8 9.8-24.3 9.8-107.4.9-210.9-41.3-286.9-117.3C41.1 318.5-1.1 214.6 0 106.9c0-.1 3.9-17.3 9.9-23.3l33.9-34c12.5-12.4 36.3-18.1 53-12.5l7.2 2.4c16.7 5.6 34.2 24 38.8 41l17.1 62.7c4.6 17-1.6 41.2-14 53.6l-22.7 22.7c22.3 82.5 86.9 147.1 169.3 169.4l22.7-22.7c12.4-12.4 36.7-18.7 53.7-14l62.7 17.1c16.9 4.6 35.4 22 41 38.7l2.4 7.2c5.6 16.7.1 40.6-12.3 53z"
+              />
+            </svg>
+          </button>
+
+          <button onclick="openModal(event)" class="header__button">
+            Оставить заявку
+          </button>
+
+          <!-- Модалка выбора номера -->
+          <div class="phone-modal" id="phoneModal">
+            <div class="phone-modal__box">
+              <p class="phone-modal__title">Выберите филиал:</p>
+              <a href="tel:+79302999998" class="phone-modal__link"
+                >+7 (930) 299-99-98 — ул.Школьная, 32А</a
+              >
+              <a href="tel:+79302999997" class="phone-modal__link"
+                >+7 (930) 299-99-97 — Тимирязева, 31А World Class Пушкинский</a
+              >
+              <a href="tel:+79302999995" class="phone-modal__link"
+                >+7 (930) 299-99-95 — ул.Бринского, 4 школа им.Михалкова</a
+              >
+              <button class="phone-modal__close" id="closePhoneModal">
+                &times;
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-label="Главный экран">
+        <img class="hero__background" id="img1" src="" alt="" />
+        <img class="hero__background" id="img2" src="" alt="" />
+
+        <div class="container hero__wrapper">
+          <div class="hero__title-wrapper">
+            <h1 class="hero__title">
+              Детская футбольная школа<br />для мальчиков и девочек 3–16 лет
+            </h1>
+          </div>
+          <div class="hero__link">
+            <img src="/ZenitNN/img/chat-bot-pay.png" alt="Чат-бот" />
+          </div>
+          <img
+            class="hero__line"
+            src="/ZenitNN/img/hero-line.png"
+            alt="Графика линии"
+          />
+        </div>
+      </section>
+
+      <section class="advantages" aria-label="Преимущества">
+        <div class="advantages__wrapper container">
+          <article
+            class="advantages__card advantages__card--bottom card-one"
+            id="adv-1"
+          >
+            <img
+              class="advantages__card-img"
+              src="/ZenitNN/img/Ellipse 1.svg"
+              alt="Иконка турниры"
+            />
+            <h3 class="advantages__card-text">Участие в турнирах</h3>
+          </article>
+          <article
+            class="advantages__card advantages__card--top card-two"
+            id="adv-2"
+          >
+            <img
+              class="advantages__card-img"
+              src="/ZenitNN/img/Ellipse 2.svg"
+              alt="Иконка партнёрство"
+            />
+            <h3 class="advantages__card-text">
+              Партнёрство с Академией Зенит Газпром
+            </h3>
+          </article>
+          <article
+            class="advantages__card advantages__card--bottom card-three"
+            id="adv-3"
+          >
+            <img
+              class="advantages__card-img"
+              src="/ZenitNN/img/Ellipse 1.svg"
+              alt="Иконка лицензия"
+            />
+            <h3 class="advantages__card-text">Тренеры с лицензией УЕФА</h3>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="running-line running-line--home"
+        aria-label="Бегущая строка"
+      >
+        <div class="running-line__wrapper">
+          <div class="running-line__inner js-marquee" role="marquee">
+            <p class="running-line__text">
+              Мы делаем футбол доступным каждому ребенку!
+            </p>
+            <img
+              class="running-line__icon"
+              src="/ZenitNN/img/ball-medal.webp"
+              alt="Иконка мяч"
+            />
+            <p class="running-line__text">
+              Приглашаем на пробную тренировку мальчиков и девочек от 3 до 16
+              лет!
+            </p>
+            <img
+              class="running-line__icon"
+              src="/ZenitNN/img/ball-medal.webp"
+              alt="Иконка мяч"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="coach" aria-label="Наши тренеры">
+        <div class="coach__wrapper container">
+          <h2 class="coach__title">Наши тренеры</h2>
+          <div class="coach__container">
+            <article class="coach__card">
+              <div class="coach__card-content--left">
+                <h3 class="coach__card-title coach__card-title--left">
+                  Макозин Максим<br />Львович
+                </h3>
+                <ul class="coach__card-list coach__card-list--left">
+                  <li class="coach__card-item">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">Тренерская лицензия С-UEFA</p>
+                  </li>
+                  <li class="coach__card-item">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">Диплом "Тренер по футболу"</p>
+                  </li>
+                  <li class="coach__card-item">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Диплом "Дошкольная педагогика<br />и психология:
+                      Инструктор<br />по физической культуре"
+                    </p>
+                  </li>
+                  <li class="coach__card-item">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Прошел подготовку в Центре повышения квалификации тренеров
+                      ФК Зенит
+                    </p>
+                  </li>
+                  <li class="coach__card-item">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Тренер с 15-летним опытом работы<br />с детскими и
+                      взрослыми командами
+                    </p>
+                  </li>
+                  <li class="coach__card-item coach__card-item--toggle">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Профессиональный футболист<br />ФК Сормович (1990 - 1995
+                      г.);<br />ФК Локомотив Нижний Новгород<br />(1995 - 2003
+                      г.)
+                    </p>
+                  </li>
+                  <li class="coach__card-item coach__card-item--toggle">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Неоднократный призёр первенства<br />чемпионата России по
+                      футболу
+                    </p>
+                  </li>
+                  <li class="coach__card-item coach__card-item--toggle">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Многократный обладатель титула<br />«Лучший защитник»,<br />«Лучший
+                      полузащитник»
+                    </p>
+                  </li>
+                  <button class="toggle-button">Подробнее</button>
+                </ul>
+              </div>
+
+              <img
+                class="coach__card-img coach__card-img--left"
+                src="/ZenitNN/img/Makozin.webp"
+                alt=""
+              />
+            </article>
+
+            <article class="coach__card">
+              <div class="coach__card-content--right">
+                <h3 class="coach__card-title coach__card-title--right">
+                  Говорков Иван
+                  <br />Сергеевич
+                </h3>
+                <ul class="coach__card-list coach__card-list--right">
+                  <li class="coach__card-item">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Волжский государственный инженерно-<br />педагогический
+                      университет “Менеджмент<br />организаций”
+                    </p>
+                  </li>
+                  <li class="coach__card-item">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Подготовка в Центре повышения<br />квалификации тренеров
+                      ФК Зенит
+                    </p>
+                  </li>
+                  <li class="coach__card-item">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Повышение квалификации в академии<br />«Пари НН» 2025 г.
+                    </p>
+                  </li>
+                  <li class="coach__card-item">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Тренер детских футбольных<br />команд 2019-2022 г.
+                    </p>
+                  </li>
+                  <li class="coach__card-item coach__card-item--toggle">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Тренер мужских команд 2021-2024 г.
+                    </p>
+                  </li>
+                  <li class="coach__card-item coach__card-item--toggle">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Профессиональный футболист <br />
+                      ФК Торпедо Виктория (2001-2003 г.);<br />
+                      ФК Сормович (1996 - 1998 г.);<br />
+                      Футбол-Хоккей ( 2020-2024 г.);<br />
+                      Мини-футбольный клуб «Мещера»<br />(1998-2001 г.);
+                    </p>
+                  </li>
+                  <li class="coach__card-item coach__card-item--toggle">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Многократный обладатель титула<br />«Лучший защитник»,<br />«Лучший
+                      полузащитник»
+                    </p>
+                  </li>
+                  <button class="toggle-button">Подробнее</button>
+                </ul>
+              </div>
+
+              <img
+                class="coach__card-img coach__card-img--right"
+                src="/ZenitNN/img/Govorkov.webp"
+                alt=""
+              />
+            </article>
+
+            <article class="coach__card">
+              <div class="coach__card-content--left">
+                <h3 class="coach__card-title coach__card-title--left">
+                  Савин Владимир <br />Александрович
+                </h3>
+                <ul class="coach__card-list coach__card-list--left">
+                  <li class="coach__card-item">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Курсы спортивной психологии<br />Евгения Серенкова
+                      (Санкт-Петербург)
+                    </p>
+                  </li>
+                  <li class="coach__card-item">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">Тренерская лицензия С-UEFA</p>
+                  </li>
+                  <li class="coach__card-item">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      ФГБОУ высшего образования<br />«НГПУ имени Козьмы
+                      Минина»<br />Магистр педагогического<br />образования 2024
+                      г.
+                    </p>
+                  </li>
+                  <li class="coach__card-item">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Проходил стажировку в командах <br />Рубин г.Казань и ЦСКА
+                      г.Москва
+                    </p>
+                  </li>
+                  <li class="coach__card-item coach__card-item--toggle">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Прошел подготовку в Центре повышения<br />квалификации
+                      тренеров ФК Зенит
+                    </p>
+                  </li>
+                  <li class="coach__card-item coach__card-item--toggle">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      с 2002 года занимался в командах<br />ДЮСШ и СШОР по
+                      футболу
+                    </p>
+                  </li>
+                  <li class="coach__card-item coach__card-item--toggle">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Тренер по футболу в спортивной школе<br />олимпийского
+                      резерва - 8
+                    </p>
+                  </li>
+                  <button class="toggle-button">Подробнее</button>
+                </ul>
+              </div>
+
+              <img
+                class="coach__card-img coach__card-img--left"
+                src="/ZenitNN/img/Savin.webp"
+                alt=""
+              />
+            </article>
+
+            <article class="coach__card">
+              <div class="coach__card-content--right">
+                <h3 class="coach__card-title coach__card-title--right">
+                  Карякин Артём
+                  <br />Владимирович
+                </h3>
+                <ul class="coach__card-list coach__card-list--right">
+                  <li class="coach__card-item">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">Тренерская лицензия С-UEFA</p>
+                  </li>
+                  <li class="coach__card-item">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">Диплом "Тренер по футболу"</p>
+                  </li>
+                  <li class="coach__card-item">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Прошел подготовку в Центре повышения<br />квалификации
+                      тренеров ФК Зенит
+                    </p>
+                  </li>
+                  <li class="coach__card-item">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Тренер с 8-летним опытом работы с детскими и взрослыми
+                      командами
+                    </p>
+                  </li>
+                  <li class="coach__card-item">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Профессиональный футболист<br />
+                      ФК Сормович (1998 - 2004 г.);<br />
+                      ФК Нижний Новгород (2004 - 2011 г.);<br />
+                      Футбол-Хоккей (2020-2024 г.)
+                    </p>
+                  </li>
+                  <li class="coach__card-item coach__card-item--toggle">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Неоднократный призёр первенства<br />чемпионата России по
+                      футболу
+                    </p>
+                  </li>
+                  <li class="coach__card-item coach__card-item--toggle">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Многократный обладатель титула<br />«Лучший защитник»,<br />«Лучший
+                      полузащитник»
+                    </p>
+                  </li>
+                  <button class="toggle-button">Подробнее</button>
+                </ul>
+              </div>
+
+              <img
+                class="coach__card-img coach__card-img--right"
+                src="/ZenitNN/img/Koryakin.webp"
+                alt=""
+              />
+            </article>
+
+            <article class="coach__card">
+              <div class="coach__card-content--left">
+                <h3 class="coach__card-title coach__card-title--left">
+                  Шахов Максим <br />Алексеевич
+                </h3>
+                <ul class="coach__card-list coach__card-list--left">
+                  <li class="coach__card-item">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Студент НГПУ имени Козьмы Минина
+                    </p>
+                  </li>
+                  <li class="coach__card-item">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Профессиональный контракт игрока с «Пари НН»
+                    </p>
+                  </li>
+                  <li class="coach__card-item">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Проходил стажировку в командах Рубин г.Казань и ЦСКА
+                      г.Москва
+                    </p>
+                  </li>
+
+                  <li class="coach__card-item">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Являлся капитаном молодежной сборной «Пари НН»
+                    </p>
+                  </li>
+
+                  <li class="coach__card-item coach__card-item--toggle">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Привлекался к тренировочному процессу в Динамо Москва,
+                      Рубин Казань, Чертаново Москва
+                    </p>
+                  </li>
+
+                  <li class="coach__card-item coach__card-item--toggle">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Победитель Межрегионального Этапа (МФС «Приволжье»)
+                      «Оргхим» - Первенства России по мини-футболу среди команд
+                      младших юношей 2005 - 2006 г.р. в составе «ВадАгро»
+                    </p>
+                  </li>
+
+                  <li class="coach__card-item coach__card-item--toggle">
+                    <div class="coach__card-dot"></div>
+                    <p class="coach__card-text">
+                      Многократный обладатель титула<br />«Лучший защитник»,<br />«Лучший
+                      полузащитник»
+                    </p>
+                  </li>
+                  <button class="toggle-button">Подробнее</button>
+                </ul>
+              </div>
+
+              <img
+                class="coach__card-img coach__card-img--left"
+                src="/ZenitNN/img/Shahov.webp"
+                alt=""
+              />
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="anchor"
+        id="branches"
+        style="background: transparent; scroll-margin-top: 0px"
+      ></div>
+
+      <section class="branches" aria-label="Наши филиалы">
+        <div class="branches__wrapper container">
+          <h2 class="branches__title" id="branches-title">Наши филиалы</h2>
+          <img
+            class="branches__sprite"
+            src="/ZenitNN/img/branches-sprite.png"
+            alt="Филиалы"
+          />
+          <div class="branches__line">
+            <div class="branches__line-inner js-marque">
+              <article class="branches__card">
+                <div class="branches__card-top">
+                  <div class="branches__card-wrapper">
+                    <h3 class="branches__card-title">
+                      Зенит - Чемпионика на Тимирязева
+                    </h3>
+                    <p class="branches__card-subtitle">
+                      ул. Тимирязева, 31А<br />World Class Пушкинский
+                    </p>
+                  </div>
+                  <img
+                    class="branches__card-img"
+                    src="/ZenitNN/img/TimiryazevaWC.webp"
+                    alt="Филиал Тимирязева"
+                  />
+                </div>
+                <button
+                  onclick="openModal(event)"
+                  class="branches__card-button"
+                >
+                  Записаться на пробную тренировку
+                </button>
+              </article>
+
+              <article class="branches__card">
+                <div class="branches__card-top">
+                  <div class="branches__card-wrapper">
+                    <h3 class="branches__card-title">
+                      Зенит - Чемпионика на Бринского
+                    </h3>
+                    <p class="branches__card-subtitle">
+                      ул. Бринского, 4<br />школа им. Михалкова
+                    </p>
+                  </div>
+                  <img
+                    class="branches__card-img"
+                    src="/ZenitNN/img/Brinskogo.webp"
+                    alt="Чемпионика на Бринского"
+                  />
+                </div>
+                <button
+                  onclick="openModal(event)"
+                  class="branches__card-button"
+                >
+                  Записаться на пробную тренировку
+                </button>
+              </article>
+
+              <article class="branches__card">
+                <div class="branches__card-top">
+                  <div class="branches__card-wrapper">
+                    <h3 class="branches__card-title">
+                      Зенит - Чемпионика на Тимирязева
+                    </h3>
+                    <p class="branches__card-subtitle">ул. Тимирязева, 31А</p>
+                  </div>
+                  <img
+                    class="branches__card-img"
+                    src="/ZenitNN/img/Timiryazeva.webp"
+                    alt="Чемпионика на Тимирязева"
+                  />
+                </div>
+                <button
+                  onclick="openModal(event)"
+                  class="branches__card-button"
+                >
+                  Записаться на пробную тренировку
+                </button>
+              </article>
+
+              <article class="branches__card">
+                <div class="branches__card-top">
+                  <div class="branches__card-wrapper">
+                    <h3 class="branches__card-title">
+                      Зенит - Чемпионика на Автозаводе
+                    </h3>
+                    <p class="branches__card-subtitle">ул. Школьная, 32 А</p>
+                  </div>
+                  <img
+                    class="branches__card-img"
+                    src="/ZenitNN/img/Avtozavod.webp"
+                    alt="Чемпионика на Автозаводе"
+                  />
+                </div>
+                <button
+                  onclick="openModal(event)"
+                  class="branches__card-button"
+                >
+                  Записаться на пробную тренировку
+                </button>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="anchor"
+        id="groups"
+        style="background: transparent; scroll-margin-top: 0px"
+      ></div>
+
+      <section
+        class="groups"
+        id="groups"
+        aria-label="Возрастные группы"
+        aria-labelledby="groups-title"
+      >
+        <div class="groups__container container">
+          <h2 class="groups__title" id="groups-title">Возрастные группы</h2>
+          <div class="groups__wrapper">
+            <div class="groups__content">
+              <div class="groups__content-wrapper">
+                <a class="groups__link junior-link" href="/ZenitNN/pages/junior.html">
+                  <div class="groups__link-wrapper">
+                    <img
+                      class="groups__link-icon"
+                      src="/ZenitNN/img/junuor-group-icon.webp"
+                      alt="Иконка младшей группы"
+                    />
+                  </div>
+                  <img
+                    class="groups__img-icon junior-img"
+                    src="/ZenitNN/img/junior-group.webp"
+                    alt="Младшая группа"
+                  />
+                  <img
+                    class="vector-junior"
+                    src="/ZenitNN/img/Vector-junior.webp"
+                    alt=""
+                  />
+                  <h3 class="groups__link-title">
+                    Младшая группа (2019–2022 г.р.)
+                  </h3>
+                </a>
+
+                <a class="groups__link middle-link" href="/ZenitNN/pages/middle.html">
+                  <div class="groups__link-wrapper">
+                    <img
+                      class="groups__link-icon"
+                      src="/ZenitNN/img/middle-group-icon.webp"
+                      alt="Иконка средней группы"
+                    />
+                  </div>
+                  <img
+                    class="groups__img-icon middle-img"
+                    src="/ZenitNN/img/middle-group.webp"
+                    alt="Средняя группа"
+                  />
+                  <img
+                    class="vector-middle"
+                    src="/ZenitNN/img/Vector-middle.webp"
+                    alt=""
+                  />
+                  <h3 class="groups__link-title">
+                    Средняя группа (2016–2018 г.р.)
+                  </h3>
+                </a>
+
+                <a class="groups__link senior-link" href="/ZenitNN/pages/senior.html">
+                  <div class="groups__link-wrapper">
+                    <img
+                      class="groups__link-icon"
+                      src="/ZenitNN/img/senior-group-icon.webp"
+                      alt="Иконка старшей группы"
+                    />
+                  </div>
+                  <img
+                    class="groups__img-icon senior-img"
+                    src="/ZenitNN/img/senior-group.webp"
+                    alt="Старшая группа"
+                  />
+                  <img
+                    class="vector-senior"
+                    src="/ZenitNN/img/Vector-senior.webp"
+                    alt=""
+                  />
+                  <h3 class="groups__link-title">
+                    Старшая группа (2012–2015 г.р.)
+                  </h3>
+                </a>
+              </div>
+              <button onclick="openModal(event)" class="groups__button">
+                Записаться на пробную тренировку
+              </button>
+            </div>
+            <img
+              class="groups__logo"
+              src="/ZenitNN/img/Logo.webp"
+              alt="Логотип Зенит"
+            />
+            <img
+              class="groups__line"
+              src="/ZenitNN/img/line.webp"
+              alt="Графический элемент"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="news-home"
+        aria-label="Новости"
+        aria-labelledby="news-home-title"
+      >
+        <div class="news-home__wrapper container">
+          <h2 class="news-home__title" id="news-home-title">Новости</h2>
+
+          <div class="news-home__slider-wrapper">
+            <button
+              class="news-home__arrow news-home__arrow--prev"
+              aria-label="Предыдущая новость"
+            >
+              &#8592;
+            </button>
+
+            <div class="news-home__container-wrapper">
+              <div class="news-home__container"></div>
+            </div>
+
+            <button
+              class="news-home__arrow news-home__arrow--next"
+              aria-label="Следующая новость"
+            >
+              &#8594;
+            </button>
+          </div>
+
+          <img
+            class="news-home__img-star"
+            src="/ZenitNN/img/news-star.webp"
+            alt="Украшение: звезда"
+          />
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="footer footer--home"
+      aria-label="Подвал сайта"
+      aria-labelledby="footer-title"
+    >
+      <img
+        class="footer__background"
+        src="/ZenitNN/img/footer-bg.webp"
+        alt="Фон футера"
+      />
+      <div class="footer__wrapper container">
+        <div class="footer__content">
+          <div class="footer__social">
+            <div class="footer__links" aria-label="Социальные сети">
+              <a
+                class="footer__link"
+                href="https://t.me/zenit_championika_nn"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Телеграм"
+              >
+                <img src="/ZenitNN/img/telegram-icon.svg" alt="Телеграм" />
+              </a>
+
+              <a
+                class="footer__link"
+                href="https://www.instagram.com/zenit_championika_nn?igsh=MTF6cTZxNWQ1eG8zOQ&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Инстаграм"
+              >
+                <img src="/ZenitNN/img/instagram-icon.svg" alt="Инстаграм" />
+              </a>
+
+              <a
+                class="footer__link"
+                href="https://vk.com/zenit_championika_n_novgorod"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Вконтакте"
+              >
+                <img src="/ZenitNN/img/vk-icon.svg" alt="Вконтакте" />
+              </a>
+            </div>
+
+            <address class="footer__info">
+              <p class="footer__adress">
+                Адрес: Нижний Новгород, ул. Минина, 29/12
+              </p>
+              <div class="footer__data">
+                <span class="footer__data-info"
+                  >ИП Галицкая Ольга Андреевна</span
+                >
+                <span class="footer__data-info">ИНН 526014780446</span>
+              </div>
+            </address>
+          </div>
+
+          <img
+            class="footer__logo"
+            src="/ZenitNN/img/zenit-logo.webp"
+            alt="Логотип Зенит"
+          />
+        </div>
+
+        <div class="footer__politic">
+          <a
+            class="footer__politic-link footer__reserved-link"
+            href="/ZenitNN/pages/politic.html"
+            target="_blank"
+            >Политика конфиденциальности</a
+          >
+
+          <a
+            footer__politic-link
+            class="footer__reserved footer__reserved-link footer__politic-link"
+            href="/ZenitNN/pages/consent.html"
+            target="_blank"
+            >Пользовательское соглашение</a
+          >
+
+          <p class="footer__reserved">@2025. Все права защищены.</p>
+        </div>
+      </div>
+    </footer>
+
+    <section
+      class="application"
+      aria-label="Форма заявки на тренировку"
+      aria-labelledby="application-title"
+    >
+      <div class="application__overlay" onclick="closeModal(event)">
+        <div
+          class="application__modal"
+          role="dialog"
+          aria-modal="true"
+          onclick="event.stopPropagation()"
+        >
+          <button
+            class="application__close-btn"
+            onclick="closeModal(event)"
+            aria-label="Закрыть форму"
+          >
+            &times;
+          </button>
+
+          <h2 class="application__form-title" id="application-title">
+            Запишитесь на бесплатное пробное занятие!
+          </h2>
+
+          <form
+            class="application__form form"
+            id="contactForm"
+            action="/ZenitNN/send.php"
+            method="POST"
+          >
+            <div class="form__wrapper">
+              <label class="form__label">
+                <input
+                  class="form__input"
+                  type="text"
+                  name="name"
+                  placeholder="Ваше имя и фамилия*"
+                  required
+                />
+              </label>
+              <label class="form__label">
+                <input
+                  class="form__input"
+                  type="tel"
+                  name="phone"
+                  placeholder="Телефон в любом формате*"
+                  required
+                />
+              </label>
+              <label class="form__label">
+                <input
+                  class="form__input"
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  required
+                />
+              </label>
+            </div>
+
+            <div class="form__select">
+              <label for="location" class="form__select-title"
+                >Выберите детский центр</label
+              >
+              <select
+                class="form__select-input"
+                id="location"
+                name="location"
+                required
+              >
+                <option
+                  class="form__select-option"
+                  value="Зенит - Чемпионика на Тимирязева"
+                >
+                  Зенит - Чемпионика на Тимирязева
+                </option>
+                <option
+                  class="form__select-option"
+                  value="Зенит - Чемпионика на Бринского"
+                >
+                  Зенит - Чемпионика на Бринского
+                </option>
+                <option
+                  class="form__select-option"
+                  value="Зенит - Чемпионика на Школьной"
+                >
+                  Зенит - Чемпионика на Школьной
+                </option>
+              </select>
+            </div>
+
+            <button class="form__button" type="submit">
+              Записаться на пробную тренировку
+            </button>
+
+            <div id="response" class="form__response" aria-live="polite"></div>
+
+            <p class="form__politic">
+              Нажимая на кнопку, вы даёте согласие на обработку персональных
+              данных и соглашаетесь с
+              <a
+                class="form__politic-link"
+                href="/ZenitNN/pages/politic.html"
+                target="_blank"
+                >политикой конфиденциальности</a
+              >
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div
+      id="preloader"
+      role="presentation"
+      aria-hidden="true"
+      aria-label="Прелоадер"
+    >
+      <div class="ball-wrapper">
+        <div class="ball-inner">
+          <div class="ball"></div>
+          <div class="dust dust-1"></div>
+          <div class="dust dust-2"></div>
+          <div class="dust dust-3"></div>
+        </div>
+        <div class="shadow"></div>
+      </div>
+    </div>
+
+    <script type="module" src="/ZenitNN/js/main.js"></script>
+    <script src="/ZenitNN/js/modal.js"></script>
+    <script src="/ZenitNN/js/running-line.js"></script>
+    <script src="/ZenitNN/js/post-form.js"></script>
+    <script src="/ZenitNN/js/toggle.js"></script>
+    <script src="/ZenitNN/js/header-burger.js"></script>
+    <script src="/ZenitNN/js/home-news.js"></script>
+    <script src="/ZenitNN/js/phone-widget.js"></script>
+    <script src="/ZenitNN/js/preloader.js"></script>
+  </body>
+</html>
