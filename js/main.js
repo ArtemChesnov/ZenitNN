@@ -1,7 +1,8 @@
 import { preloadFirstImage, startSlider } from "./home/hero-slider.js";
 import { animateAdvantages } from "./home/advantages-animate.js";
 import updateCoachParagraphs from "./home/coach-clean-br.js";
-import initGroupHover from "./home/group-hover.js";
+
+import { initGroupHover, initMobileLinkAnimation } from "./home/group-hover.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   preloadFirstImage();
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     animateAdvantages();
     updateCoachParagraphs();
     initGroupHover();
+    initMobileLinkAnimation();
   }, 300);
 });
 

@@ -32,4 +32,29 @@ function initGroupHover() {
   seniorLink?.addEventListener("mouseleave", hideAllImages);
 }
 
-export default initGroupHover;
+function initMobileLinkAnimation() {
+  if (window.innerWidth > 1024) return; // Только на мобильных
+
+  const links = document.querySelectorAll(".groups__link");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const wrapper = entry.target.querySelector(".groups__link-wrapper");
+
+        if (entry.isIntersecting) {
+          wrapper.classList.add("animate");
+        } else {
+          wrapper.classList.remove("animate");
+        }
+      });
+    },
+    {
+      threshold: 0.6,
+    }
+  );
+
+  links.forEach((link) => observer.observe(link));
+}
+
+export { initGroupHover, initMobileLinkAnimation };
