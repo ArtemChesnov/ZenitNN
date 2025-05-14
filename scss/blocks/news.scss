@@ -42,6 +42,7 @@
 
         @media (max-width:1200px) {
             height: auto;
+            max-height: 600px;
         }
     }
 
@@ -51,7 +52,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        padding: 40px 10px;
+        padding: 40px 40px;
         background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
         @include font(28px, 700, 100%);
         transition: all 0.4s ease;
