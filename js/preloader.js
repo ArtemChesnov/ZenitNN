@@ -30,13 +30,14 @@ window.addEventListener("load", () => {
 
   function endPreloader() {
     if (observer) observer.disconnect();
-    clearTimeout(timeoutId); // остановка таймера
+    clearTimeout(timeoutId);
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         preloader.classList.add("fade-out");
         setTimeout(() => {
           preloader.style.display = "none";
+          document.dispatchEvent(new Event("preloader:done")); // ← вот это
         }, 400); // синхронизировано с CSS
       });
     });

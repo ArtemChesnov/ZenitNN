@@ -6,19 +6,19 @@ import { initGroupHover, initMobileLinkAnimation } from "./home/group-hover.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   preloadFirstImage();
+});
 
-  setTimeout(() => {
-    document.querySelector(".header").classList.add("header--visible");
-    document
-      .querySelector(".hero__title-wrapper")
-      .classList.add("hero__title-wrapper--visible");
+document.addEventListener("preloader:done", () => {
+  document.querySelector(".header").classList.add("header--visible");
+  document
+    .querySelector(".hero__title-wrapper")
+    .classList.add("hero__title-wrapper--visible");
 
-    startSlider();
-    animateAdvantages();
-    updateCoachParagraphs();
-    initGroupHover();
-    initMobileLinkAnimation();
-  }, 300);
+  startSlider();
+  animateAdvantages();
+  updateCoachParagraphs();
+  initGroupHover();
+  initMobileLinkAnimation();
 });
 
 window.addEventListener("resize", updateCoachParagraphs);

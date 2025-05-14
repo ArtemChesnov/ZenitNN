@@ -1,4 +1,4 @@
-fetch("/ZenitNN/data/news.json")
+fetch("/data/news.json")
   .then((response) => response.json())
   .then((newsData) => {
     const slider = document.getElementById("news");
@@ -31,7 +31,7 @@ fetch("/ZenitNN/data/news.json")
       pageItems.forEach((news, index) => {
         const slide = document.createElement("a");
         slide.className = "news__item";
-        slide.href = `/ZenitNN/pages/news-posts/${news.id}.html`;
+        slide.href = `/pages/news-posts/${news.id}.html`;
 
         slide.style.opacity = "0";
         slide.style.transform = "translateY(20px)";
@@ -58,7 +58,7 @@ fetch("/ZenitNN/data/news.json")
       updateRelPaginationLinks(page);
       updateURL(page);
       renderPagination(); // ← пересоздаём пагинацию
-      slider.scrollIntoView({ behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
     function renderPagination() {

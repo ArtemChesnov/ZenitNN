@@ -16,7 +16,7 @@ let imageList = [];
 const path = window.location.pathname;
 const galleryId = path.match(/\/([\w]+)\.html$/)?.[1];
 
-fetch("/ZenitNN/data/news.json")
+fetch("/data/news.json")
   .then((res) => res.json())
   .then((data) => {
     const gallery = data.find((gallery) => gallery.id === galleryId);
