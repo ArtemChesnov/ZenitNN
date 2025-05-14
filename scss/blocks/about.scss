@@ -1,0 +1,119 @@
+.about {
+
+    margin-top: 60px;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+
+        @media (max-width: 1900px) {
+            flex-direction: column;
+        }
+
+
+        @media (max-width: 1440px) {
+            gap: 20px;
+        }
+
+        @media (max-width: 1200px) {
+            gap: 20px;
+        }
+
+        @media (max-width: 780px) {
+            gap: 15px;
+        }
+
+        @media (max-width: 480px) {
+            gap: 10px;
+        }
+    }
+
+    &__img-big {
+        width: 860px;
+        height: 622px;
+        border-radius: 10px;
+
+        @media (max-width: 1900px) {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__img-small {
+        width: 100%;
+        max-width: 410px;
+        height: auto;
+        border-radius: 10px;
+
+        @media (max-width: 1900px) {
+            max-width: none;
+            gap: 20px;
+        }
+
+
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+
+        @media (max-width: 1900px) {
+            text-align: justify;
+        }
+
+        @media (max-width: 1440px) {
+            gap: 20px;
+        }
+
+
+
+
+        @media (max-width: 1440px) {
+            flex-direction: column;
+        }
+
+
+
+    }
+
+    &__foto {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        gap: 40px;
+
+        @media (max-width: 1440px) {
+            gap: 20px;
+        }
+
+        @media (max-width: 780px) {
+            gap: 15px;
+        }
+
+        @media (max-width: 480px) {
+            gap: 10px;
+        }
+    }
+
+    &__text {
+        @include font(24px, 400, 120%);
+        color: $text-blue;
+
+
+        @media (max-width: 780px) {
+            @include font(20px, 400, 120%);
+        }
+
+
+        @media (max-width: 500px) {
+            @include font(18px, 400, 120%);
+        }
+
+        @media (max-width: 430px) {
+            @include font(14px, 400, 120%);
+        }
+    }
+
+}

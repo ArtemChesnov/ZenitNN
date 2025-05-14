@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/ZenitNN/css/style.css" />
+  </head>
+
+  <body class="page">
+    <header class="header" aria-label="Главное меню">
+      <div class="container header__wrapper">
+        <a href="/ZenitNN/index.html">
+          <img
+            class="header__logo"
+            src="/ZenitNN/img/zenit-logo.webp"
+            alt="Логотип Зенит"
+          />
+        </a>
+
+        <div class="header__burger" id="burger" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </div>
+
+        <nav class="header__navigation" id="navigation">
+          <ul class="header__navigation-list">
+            <li>
+              <a class="header__navigation-link" href="/ZenitNN/pages/about.html"
+                >О школе</a
+              >
+            </li>
+            <li>
+              <a class="header__navigation-link" href="/ZenitNN/pages/coach.html"
+                >Тренеры</a
+              >
+            </li>
+            <li class="header__navigation-item--dropdown" id="dropdownToggle">
+              <a
+                data-offset="300"
+                href="/ZenitNN/index.html#groups"
+                class="header__navigation-link scroll-link"
+                >Возрастные группы</a
+              >
+            </li>
+            <li>
+              <a
+                class="header__navigation-link scroll-link"
+                data-offset="300"
+                href="/ZenitNN/index.html#branches"
+                >Филиалы</a
+              >
+            </li>
+            <li>
+              <a class="header__navigation-link" href="/ZenitNN/pages/teams.html"
+                >Сборные</a
+              >
+            </li>
+            <li>
+              <a class="header__navigation-link" href="/ZenitNN/pages/news.html"
+                >Новости</a
+              >
+            </li>
+          </ul>
+          <ul class="header__phone-list">
+            <li class="header__phone-item">
+              <a href="tel:+79302999998" class="header__phone-link"
+                >+7 (930) 299-99-98 — ул.Школьная, 32А</a
+              >
+            </li>
+            <li>
+              <a href="tel:+79302999997" class="header__phone-link"
+                >+7 (930) 299-99-97 — Тимирязева, 31А, World Class Пушкинский</a
+              >
+            </li>
+            <li>
+              <a href="tel:+79302999995" class="header__phone-link"
+                >+7 (930) 299-99-95 — ул.Бринского, 4, школа им.Михалкова</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header__info">
+          <!-- Иконка телефона -->
+          <button class="phone-button" aria-label="Позвонить" id="phoneButton">
+            <svg
+              class="phone-icon"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M462.5 468.2l-33.9 33.9c-6.1 6-23.8 9.8-24.3 9.8-107.4.9-210.9-41.3-286.9-117.3C41.1 318.5-1.1 214.6 0 106.9c0-.1 3.9-17.3 9.9-23.3l33.9-34c12.5-12.4 36.3-18.1 53-12.5l7.2 2.4c16.7 5.6 34.2 24 38.8 41l17.1 62.7c4.6 17-1.6 41.2-14 53.6l-22.7 22.7c22.3 82.5 86.9 147.1 169.3 169.4l22.7-22.7c12.4-12.4 36.7-18.7 53.7-14l62.7 17.1c16.9 4.6 35.4 22 41 38.7l2.4 7.2c5.6 16.7.1 40.6-12.3 53z"
+              />
+            </svg>
+          </button>
+
+          <button onclick="openModal(event)" class="header__button">
+            Оставить заявку
+          </button>
+
+          <!-- Модалка выбора номера -->
+          <div class="phone-modal" id="phoneModal">
+            <div class="phone-modal__box">
+              <p class="phone-modal__title">Выберите филиал:</p>
+              <a href="tel:+79302999998" class="phone-modal__link"
+                >+7 (930) 299-99-98 — ул.Школьная, 32А</a
+              >
+              <a href="tel:+79302999997" class="phone-modal__link"
+                >+7 (930) 299-99-97 — Тимирязева, 31А, World Class Пушкинский</a
+              >
+              <a href="tel:+79302999995" class="phone-modal__link"
+                >+7 (930) 299-99-95 — ул.Бринского, 4, школа им.Михалкова</a
+              >
+              <button class="phone-modal__close" id="closePhoneModal">
+                &times;
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="crumbs container" aria-label="Хлебные крошки">
+      <ol class="crumbs__list">
+        <li class="crumbs__item">
+          <a href="/ZenitNN/index.html" class="crumbs__link">Главная</a>
+        </li>
+        <li class="crumbs__item crumbs__separator" aria-hidden="true">
+          <img
+            class="crumbs__icon"
+            src="/ZenitNN/img/crumbs-icon.svg"
+            alt="Разделитель навигации"
+          />
+        </li>
+        <li class="crumbs__item">
+          <a href="/ZenitNN/pages/news.html" class="crumbs__link">Новости</a>
+        </li>
+        <li class="crumbs__item crumbs__separator" aria-hidden="true">
+          <img
+            class="crumbs__icon"
+            src="/ZenitNN/img/crumbs-icon.svg"
+            alt="Разделитель навигации"
+          />
+        </li>
+        <li class="crumbs__item crumbs__item--current" aria-current="page">
+          {{title}}
+        </li>
+      </ol>
+    </nav>
+
+    <main>
+      <article class="post">
+        <section class="post__wrapper container" aria-labelledby="post-title">
+          <h1 class="post__title" id="post-title">{{title}}</h1>
+          <p class="post__text">{{text}}</p>
+        </section>
+        <section
+          class="post__grid container"
+          id="$id"
+          aria-label="Фотогалерея"
+        ></section>
+      </article>
+
+      <div
+        class="post-modal"
+        id="post-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Просмотр изображения"
+      >
+        <div class="post-modal__overlay" tabindex="-1"></div>
+
+        <div class="post-modal__content">
+          <button class="post-modal__close" aria-label="Закрыть просмотр">
+            &times;
+          </button>
+
+          <img class="post-modal__image" alt="Увеличенное изображение" />
+
+          <div class="post-modal__counter" id="post-modalCounter">1 / N</div>
+
+          <div class="post-modal__thumbs-container" aria-label="Миниатюры">
+            <button
+              class="post-thumbs__arrow post-thumbs__arrow--left"
+              aria-label="Прокрутка влево"
+            >
+              &#8592;
+            </button>
+
+            <div
+              class="post-modal__thumbnails"
+              id="post-modalThumbnails"
+              role="list"
+            ></div>
+
+            <button
+              class="post-thumbs__arrow post-thumbs__arrow--right"
+              aria-label="Прокрутка вправо"
+            >
+              &#8594;
+            </button>
+          </div>
+
+          <button class="post-modal__prev" aria-label="Предыдущее изображение">
+            ←
+          </button>
+          <button class="post-modal__next" aria-label="Следующее изображение">
+            →
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      class="footer footer--news"
+      aria-labelledby="footer-title"
+      aria-label="Подвал сайта"
+    >
+      <img
+        class="footer__background"
+        src="/ZenitNN/img/footer-bg.webp"
+        alt="Фон футера"
+      />
+      <div class="footer__wrapper container">
+        <div class="footer__content">
+          <div class="footer__social">
+            <div class="footer__links" aria-label="Социальные сети">
+              <a
+                class="footer__link"
+                href="https://t.me/zenit_championika_nn"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Телеграм"
+              >
+                <img src="/ZenitNN/img/telegram-icon.svg" alt="Телеграм" />
+              </a>
+
+              <a
+                class="footer__link"
+                href="https://www.instagram.com/zenit_championika_nn?igsh=MTF6cTZxNWQ1eG8zOQ&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Инстаграм"
+              >
+                <img src="/ZenitNN/img/instagram-icon.svg" alt="Инстаграм" />
+              </a>
+
+              <a
+                class="footer__link"
+                href="https://vk.com/zenit_championika_n_novgorod"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Вконтакте"
+              >
+                <img src="/ZenitNN/img/vk-icon.svg" alt="Вконтакте" />
+              </a>
+            </div>
+
+            <address class="footer__info">
+              <p class="footer__adress">
+                Адрес: Нижний Новгород, ул. Минина, 29/12
+              </p>
+              <div class="footer__data">
+                <span class="footer__data-info"
+                  >ИП Галицкая Ольга Андреевна</span
+                >
+                <span class="footer__data-info">ИНН 526014780446</span>
+              </div>
+            </address>
+          </div>
+          <img
+            class="footer__logo"
+            src="/ZenitNN/img/zenit-logo.webp"
+            alt="Логотип Зенит"
+          />
+        </div>
+        <div class="footer__politic">
+          <a
+            class="footer__politic-link footer__reserved-link"
+            href="/ZenitNN/pages/politic.html"
+            target="_blank"
+            >Политика конфиденциальности</a
+          >
+          <p class="footer__reserved">@2024. Все права защищены.</p>
+          <a
+            footer__politic-link
+            class="footer__reserved footer__reserved-link footer__politic-link"
+            href="/ZenitNN/pages/consent.html"
+            target="_blank"
+            >Пользовательское соглашение</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <section
+      class="application"
+      aria-label="Форма заявки на тренировку"
+      aria-labelledby="application-title"
+    >
+      <div class="application__overlay" onclick="closeModal(event)">
+        <div
+          class="application__modal"
+          role="dialog"
+          aria-modal="true"
+          onclick="event.stopPropagation()"
+        >
+          <button
+            class="application__close-btn"
+            onclick="closeModal(event)"
+            aria-label="Закрыть форму"
+          >
+            &times;
+          </button>
+
+          <h2 class="application__form-title" id="application-title">
+            Запишитесь на бесплатное пробное занятие!
+          </h2>
+
+          <form
+            class="application__form form"
+            id="contactForm"
+            action="/ZenitNN/send.php"
+            method="POST"
+          >
+            <div class="form__wrapper">
+              <label class="form__label">
+                <input
+                  class="form__input"
+                  type="text"
+                  name="name"
+                  placeholder="Ваше имя и фамилия*"
+                  required
+                />
+              </label>
+              <label class="form__label">
+                <input
+                  class="form__input"
+                  type="tel"
+                  name="phone"
+                  placeholder="Телефон в любом формате*"
+                  required
+                />
+              </label>
+              <label class="form__label">
+                <input
+                  class="form__input"
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  required
+                />
+              </label>
+            </div>
+
+            <div class="form__select">
+              <label for="location" class="form__select-title"
+                >Выберите детский центр</label
+              >
+              <select
+                class="form__select-input"
+                id="location"
+                name="location"
+                required
+              >
+                <option
+                  class="form__select-option"
+                  value="Зенит - Чемпионика на Тимирязева"
+                >
+                  Зенит - Чемпионика на Тимирязева
+                </option>
+                <option
+                  class="form__select-option"
+                  value="Зенит - Чемпионика на Бринского"
+                >
+                  Зенит - Чемпионика на Бринского
+                </option>
+                <option
+                  class="form__select-option"
+                  value="Зенит - Чемпионика на Школьной"
+                >
+                  Зенит - Чемпионика на Школьной
+                </option>
+              </select>
+            </div>
+
+            <button class="form__button" type="submit">
+              Записаться на пробную тренировку
+            </button>
+
+            <div id="response" class="form__response" aria-live="polite"></div>
+
+            <p class="form__politic">
+              Нажимая на кнопку, вы даёте согласие на обработку персональных
+              данных и соглашаетесь с
+              <a
+                class="form__politic-link"
+                href="/ZenitNN/pages/politic.html"
+                target="_blank"
+                >политикой конфиденциальности</a
+              >
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div
+      id="preloader"
+      role="presentation"
+      aria-hidden="true"
+      aria-label="Прелоадер"
+    >
+      <div class="ball-wrapper">
+        <div class="ball-inner">
+          <div class="ball"></div>
+          <div class="dust dust-1"></div>
+          <div class="dust dust-2"></div>
+          <div class="dust dust-3"></div>
+        </div>
+        <div class="shadow"></div>
+      </div>
+    </div>
+
+    <script src="/ZenitNN/js/modal.js"></script>
+    <script src="/ZenitNN/js/post-form.js"></script>
+    <script src="/ZenitNN/js/header.js"></script>
+    <script src="/ZenitNN/js/header-burger.js"></script>
+    <script src="/ZenitNN/js/gallery.js"></script>
+    <script src="/ZenitNN/js/phone-widget.js"></script>
+    <script src="/ZenitNN/js/preloader.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/typograf@8.0.0/dist/typograf.min.js"
+      defer
+    ></script>
+    <script src="/ZenitNN/js/typograf-format.js" defer></script>
+  </body>
+</html>

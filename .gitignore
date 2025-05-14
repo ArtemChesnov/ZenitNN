@@ -1,14 +1,14 @@
-.hintrc
+# .hintrc
 
-send.php
-mail_config.php
+# send.php
+# mail_config.php
 
-pages/admin/
+# pages/admin/
 
-PHPMailer/
+# PHPMailer/
 
-scss/
+# scss/
 
-fix.js
+# fix.js
 
-unfix.js
+# unfix.js

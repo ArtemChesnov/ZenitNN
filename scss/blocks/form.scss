@@ -1,0 +1,316 @@
+.application {
+    &__overlay {
+        z-index: 100;
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        justify-content: center;
+        align-items: center;
+
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+
+        &.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+
+    &__modal {
+        z-index: 101;
+        background: $blue;
+        padding: 60px 45px 60px 45px;
+        border-radius: 8px;
+        width: auto;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        transform: translateY(-20px);
+        opacity: 0;
+        transition: transform 0.4s ease, opacity 0.4s ease;
+
+
+        @media (max-width: 780px) {
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 0;
+            height: calc(var(--vh, 1vh) * 100);
+            width: 100%;
+            border-radius: 0;
+        }
+
+        .application__overlay.active & {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    &__close-btn {
+        width: auto;
+        height: auto;
+        color: $white;
+        background-color: transparent;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        border: none;
+        @include font(36px, 400, 100%);
+        padding: 0px 10px;
+        cursor: pointer;
+
+
+        @media (max-width:780px) {
+            @include font(42px, 400, 100%);
+            width: auto;
+            height: auto;
+            color: #FFFFFF;
+            background-color: transparent;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (max-width:780px) {
+            width: 90%;
+        }
+
+        &-title {
+            margin-bottom: 42px;
+            @include font(24px, 400, 100%);
+            color: $white;
+            text-align: center;
+
+            @media (max-width:780px) {
+                margin-bottom: 24px;
+                @include font(20px, 400, 100%);
+            }
+
+            @media (max-width:430px) {
+                @include font(16px, 400, 100%);
+            }
+        }
+    }
+}
+
+.form {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        @media (max-width:780px) {
+            width: 100%;
+        }
+    }
+
+    &__input {
+        width: 459px;
+        height: 64px;
+        border: none;
+        border-radius: 6px;
+        background-color: $white;
+        @include font(18px, 400, 100%);
+        color: $text-blue;
+        padding: 0 0 0 20px;
+        transition: border-color 0.3s;
+
+
+
+        &:focus {
+            outline: 2px solid $gold;
+        }
+
+        @media (max-width:780px) {
+            width: 100%;
+        }
+
+
+        @media (max-width:780px) {
+            @include font(16px, 400, 100%);
+            box-sizing: border-box;
+        }
+
+        @media (max-width:430px) {
+            @include font(14px, 400, 100%);
+            height: 52px;
+        }
+
+        &::placeholder {
+            color: rgba(204, 199, 199, 1);
+        }
+    }
+
+    .form__select {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        width: 479px;
+
+
+        @media (max-width:780px) {
+            width: 100%;
+        }
+
+        &-title {
+            margin: 60px 0 32px 0;
+            @include font(24px, 400, 100%);
+            color: $white;
+
+            @media (max-width:780px) {
+                @include font(20px, 400, 100%);
+                margin: 42px 0 24px 0;
+            }
+
+            @media (max-width:430px) {
+                @include font(16px, 400, 100%);
+            }
+        }
+
+        &-input {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            border: none;
+            border-radius: 6px;
+            width: 479px;
+            height: 64px;
+            background-color: $white;
+            @include font(18px, 400, 100%);
+            color: $text-blue;
+            padding: 0 40px 0 20px;
+            cursor: pointer;
+            appearance: none;
+
+            &:focus {
+                outline: 2px solid $gold;
+            }
+
+            @media (max-width:780px) {
+                @include font(16px, 400, 100%);
+                width: 100%;
+            }
+
+            @media (max-width:430px) {
+                @include font(14px, 400, 100%);
+                height: 52px;
+            }
+
+            background-image: url('../img/select-icon.svg');
+            background-repeat: no-repeat;
+            background-position: right 20px center;
+            background-size: 15px 8px;
+        }
+
+        &-option {
+            @include font(18px, 400, 100%);
+            color: $text-blue;
+
+
+            @media (max-width:780px) {
+                @include font(16px, 400, 100%);
+            }
+
+            @media (max-width:430px) {
+                @include font(14px, 400, 100%);
+            }
+        }
+    }
+
+    &__button {
+        margin-top: 60px;
+        padding: 25px 35px;
+        @include font(22px, 400, 100%);
+        color: $white;
+        border-radius: 100px;
+        border: 1px solid $white;
+        background-color: $gold;
+        box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+
+        @media (max-width:780px) {
+            @include font(18px, 400, 100%);
+            width: 100%;
+            padding: 22px 0;
+        }
+
+        @media (max-width:430px) {
+            @include font(14px, 400, 100%);
+            margin-top: 42px;
+        }
+
+        &:hover {
+            color: $gold;
+            background-color: $white;
+            border: 1px solid $gold;
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+
+    &__politic {
+        width: 500px;
+        margin-top: 24px;
+        @include font(18px, 400, 100%);
+        color: $text-white;
+        text-align: center;
+
+        @media (max-width:430px) {
+            @include font(14px, 400, 100%);
+            width: 288px;
+        }
+
+        &-link {
+            text-decoration: none;
+            @include font(18px, 700, 100%);
+            color: $text-white;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            @media (max-width:780px) {
+                @include font(16px, 400, 100%);
+            }
+
+
+            @media (max-width:430px) {
+                @include font(14px, 700, 100%);
+            }
+        }
+    }
+}
+
+.form__response {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    background-color: #f0f0f0;
+    color: #333;
+    display: none;
+    /* по умолчанию скрыт */
+}
+
+.form__response.success {
+    background-color: #e6ffed;
+    color: #1a7f37;
+    border: 1px solid #a4f3b7;
+}
+
+.form__response.error {
+    background-color: #ffe6e6;
+    color: #a30000;
+    border: 1px solid #f5a4a4;
+}

@@ -1,0 +1,204 @@
+.branches {
+    margin-top: 120px;
+    overflow: hidden;
+
+    @media (max-width:360px) {
+        margin-top: 60px;
+    }
+
+
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 434px;
+        position: relative;
+        height: 1110px;
+
+        @media (max-width: 1200px) {
+            height: 900px;
+            gap: 290px;
+        }
+
+        @media (max-width: 430px) {
+            height: 420px;
+            gap: 120px;
+        }
+    }
+
+
+
+    &__title {
+        @include font(50px, 400, 100%);
+        color: $text-blue;
+        z-index: 5;
+
+        @media (max-width: 780px) {
+            @include font(36px, 400, 100%);
+        }
+
+        @media (max-width: 430px) {
+            @include font(22px, 400, 100%);
+        }
+    }
+
+    &__line {
+
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+
+        @media (max-width: 430px) {
+            gap: 60px;
+        }
+
+        &:hover .branches__line-inner {
+            animation-play-state: paused;
+        }
+
+
+        &-inner {
+            display: flex;
+            gap: 60px;
+            will-change: transform;
+            animation: marquee linear infinite;
+            animation-duration: var(--marquee-duration, 5s);
+
+            @media (max-width: 430px) {
+                gap: 60px;
+            }
+        }
+
+    }
+
+    &__sprite {
+        top: 104px;
+        left: -285px;
+        right: -321px;
+        position: absolute;
+        width: 2454px;
+        height: 1000px;
+
+        @media (max-width: 1200px) {
+            top: 80px;
+            width: 2116px;
+            height: 819px;
+        }
+
+        @media (max-width: 780px) {
+            top: 80px;
+            left: -450px;
+            width: 2116px;
+            height: 819px;
+        }
+
+        @media (max-width: 430px) {
+            gap: 60px;
+            width: auto;
+            top: 30px;
+            left: -335px;
+            height: 400px;
+        }
+    }
+
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        gap: 20px;
+
+
+
+        &-top {
+            display: flex;
+            gap: 24px;
+
+            @media (max-width: 430px) {
+                gap: 0px;
+            }
+        }
+
+        &-wrapper {
+            width: 291px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            @media (max-width: 430px) {
+                width: 168px;
+            }
+        }
+
+        &-title {
+            @include font (32px, 400, 100%);
+            color: $text-white;
+
+            @media (max-width: 430px) {
+                @include font (20px, 400, 100%);
+            }
+        }
+
+        &-subtitle {
+            @include font (26px, 400, 100%);
+            color: $text-white;
+
+            @media (max-width: 430px) {
+                @include font (15px, 400, 100%);
+            }
+        }
+
+        &-img {
+            height: 196px;
+
+            @media (max-width: 430px) {
+                height: 120px;
+            }
+        }
+
+        &-button {
+            border: 1px solid $white;
+            background-color: $gold;
+            @include font (26px, 400, 100%);
+            border-radius: 100px;
+            padding: 14px 0;
+            max-width: 423px;
+            color: $white;
+            cursor: pointer;
+            transition: 100ms ease-in-out;
+
+
+            @media (max-width: 430px) {
+                @include font (16px, 400, 100%);
+                padding: 9px 0;
+                max-width: 266px;
+            }
+
+            &:hover {
+                color: $gold;
+                background-color: $white;
+                border: 1px solid $gold;
+            }
+
+            &:active {
+                transform: scale(0.95);
+            }
+        }
+
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}

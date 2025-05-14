@@ -1,0 +1,655 @@
+#coverInput {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.admin-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  height: 100%;
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.7),
+      rgba(60, 160, 219, 0.7),
+      rgba(1, 30, 75, 0.9));
+}
+
+.admin-panel {
+  width: 70%;
+  background: $white;
+  max-width: 1200px;
+  margin: 80px auto;
+  color: $text-blue;
+  border-radius: 12px;
+  padding: 4rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media (max-width:780px) {
+    gap: 1rem;
+  }
+
+  &__title {
+    align-self: center;
+  }
+
+  &__title,
+  &__subtitle {
+    display: block;
+    margin-top: 60px;
+    @include font(50px, 700, 100%);
+    font-family: $font-futura;
+    color: $text-blue;
+    margin-bottom: 1.4rem;
+    text-align: center;
+
+    @media (max-width:780px) {
+      gap: 0.7rem;
+    }
+
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    @media (max-width:780px) {
+      gap: 0.6rem;
+    }
+
+    &-file {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    &-label {
+      @include font(22px, 700, 100%);
+      color: $text-blue;
+      font-family: $font-futura;
+      margin-bottom: 0.3rem;
+    }
+
+    &-input,
+    &-textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      @include font(18px, 400, 100%);
+      font-family: $font-futura;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: #fff;
+      box-sizing: border-box;
+
+      &:focus {
+        outline: 1px solid $blue;
+      }
+    }
+
+    &-dropzone {
+      border: 2px dashed rgba(60, 160, 219, 0.2);
+      border-radius: 8px;
+      padding: 3rem;
+      text-align: center;
+      @include font(18px, 400, 100%);
+      color: $text-blue;
+      background-color: rgba(60, 160, 219, 0.05);
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      &-wrapper {
+        position: relative;
+
+      }
+
+      &.dragover {
+        background-color: #e6f7ff;
+        border-color: $blue;
+      }
+    }
+
+    &-submit,
+    &-reset {
+      font-family: $font-futura;
+      width: 100%;
+      text-align: center;
+      padding: 18px 0;
+      @include font(16px, 700, 100%);
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      background-color: $blue;
+      color: $white;
+      transition: background 0.3s, color 0.3s;
+
+      &:hover {
+        background-color: #2d85ba;
+      }
+    }
+
+    &-reset {
+      background-color: #555;
+
+      &:hover {
+        background-color: #3d3d3d;
+      }
+    }
+
+    &-cover-preview {
+      width: 260px;
+      height: 200px;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    &-image-preview {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+
+      img {
+        width: 100%;
+        height: 200px;
+        border-radius: 8px;
+        object-fit: cover;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    &-image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 12px;
+      width: 100%;
+    }
+
+    &-image-remove {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      background: #cc0000;
+      color: #fff;
+      font-size: 14px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      line-height: 18px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      padding: 0;
+    }
+
+    &-image-count {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #333;
+      align-self: flex-start;
+    }
+  }
+
+  &__news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.2rem;
+
+    @media (max-width:780px) {
+      gap: 0.6rem;
+    }
+  }
+
+  &__news-card {
+    background-color: $white;
+    color: $text-blue;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    position: relative;
+
+    @media (max-width:780px) {
+      gap: 0.3rem;
+    }
+
+    img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    h3 {
+      max-width: 300px;
+      @include font(18px, 700, 100%);
+      margin: 0;
+      text-align: center;
+    }
+
+    &-buttons {
+      margin-top: 40px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+
+      a {
+        @include font(16px, 700, 100%);
+        width: 100%;
+        text-align: center;
+        padding: 18px 0;
+        background-color: #eeeeee;
+        border-radius: 6px;
+        color: #333333;
+        text-decoration: none;
+
+        &:hover {
+          background-color: #dddddd;
+          transition: all 100ms ease-in-out;
+        }
+      }
+
+      .delete {
+        @include font (16px, 700< 100%);
+        border-radius: 6px;
+        width: 100%;
+        background-color: #fce4e4;
+        color: #d32f2f;
+        border: none;
+        cursor: pointer;
+        padding: 14px 0;
+
+        &:hover {
+          background-color: hsl(355, 70%, 91%);
+        }
+      }
+    }
+  }
+
+  &__toast {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    max-width: 300px;
+    background-color: $white;
+    color: $text-blue;
+    padding: 1rem 1.5rem;
+    border-radius: 16px 16px 4px 16px;
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: fixed;
+
+    &.error {
+      background-color: #e74c3c;
+    }
+
+
+    &.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+  }
+
+}
+
+.admin-panel__progress {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 22px;
+  transform: translate(-50%, -50%) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  background: #e0e0e0;
+  border-radius: 12px;
+  z-index: 1001;
+  overflow: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  &.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+  }
+
+  &-bar {
+    position: relative;
+    width: 0%;
+    height: 100%;
+    background-color: #00c6ff;
+    border-radius: 12px;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+      animation: shimmer-bar 2s linear infinite;
+    }
+  }
+
+  &-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+    pointer-events: none;
+  }
+}
+
+@keyframes shimmer-bar {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+
+
+@media (max-width: 780px) {
+  .admin-panel {
+    padding: 1rem;
+
+    &__title {
+      font-size: 1.8rem;
+      margin-bottom: 0.7rem;
+    }
+
+    &__subtitle {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+
+
+  .admin-panel {
+    padding: 1rem;
+
+    &__title {
+      font-size: 1.5rem;
+    }
+
+    &__subtitle {
+      font-size: 1.25rem;
+    }
+
+    &__form-input,
+    &__form-textarea {
+      font-size: 0.9rem;
+    }
+
+    &__news-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+
+.admin-panel__logout {
+  position: absolute;
+  text-decoration: none;
+  align-self: self-end;
+  background-color: #eeeeee;
+  border-radius: 6px;
+  color: #333333;
+  @include font(16px, 700, 100%);
+  padding: 14px 36px;
+
+  &:hover {
+    background-color: #dddddd;
+    transition: all 100ms ease-in-out;
+  }
+}
+
+
+.admin-login {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  min-width: 280px;
+
+  &__error {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffe0e0;
+    color: #b80000;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ffb3b3;
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+    opacity: 1;
+    animation: fadeIn 0.4s ease;
+  }
+
+  &__error.hidden {
+    opacity: 0;
+  }
+
+  input.error {
+    border: 1px solid #d32f2f;
+    background-color: #fff5f5;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.admin-login__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: auto;
+  text-align: center;
+}
+
+.admin-login__title {
+  @include font(32px, 700, 100%);
+  font-family: $font-futura;
+  color: $text-blue;
+  margin-bottom: 1.6rem;
+}
+
+.admin-login__input-name {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  @include font(18px, 400, 100%);
+  font-family: $font-futura;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  box-sizing: border-box;
+  margin-bottom: 0.5rem;
+
+  &:focus {
+    outline: 1px solid $blue;
+  }
+}
+
+.admin-login__input-password {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  @include font(18px, 400, 100%);
+  font-family: $font-futura;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  box-sizing: border-box;
+  margin-bottom: 1.2rem;
+
+  &:focus {
+    outline: 1px solid $blue;
+  }
+}
+
+.admin-login__input-button {
+  font-family: $font-futura;
+  width: 100%;
+  text-align: center;
+  padding: 18px 0;
+  @include font(16px, 700, 100%);
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #33333397;
+  color: $white;
+  transition: background 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: #333333;
+    transition: all 100ms ease-in-out;
+  }
+}
+
+
+.skeleton {
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150px;
+  width: 150px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(300%);
+  }
+}
+
+.skeleton-card {
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  padding: 1rem;
+  height: 340px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150px;
+  width: 150px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+.admin-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 2rem auto;
+
+  &__btn {
+    padding: 8px 14px;
+    background-color: #3ca0db;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: #2d85ba;
+    }
+
+    &.active {
+      background-color: #004e84;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
+  &__dots {
+    padding: 8px 14px;
+    font-weight: bold;
+    color: #555;
+  }
+}
