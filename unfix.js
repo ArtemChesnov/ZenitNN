@@ -5,39 +5,53 @@ const exts = [".html", ".css", ".js"];
 const prefix = "/ZenitNN/";
 const newsPath = path.join(__dirname, "data", "news.json");
 
-// Удаляет префикс, если он есть
 function removePrefix(value) {
   if (value && value.startsWith(prefix)) {
     return "/" + value.slice(prefix.length);
   }
-  return value;
+  return null; // если нечего удалять
 }
 
 function processFile(filePath) {
   let content = fs.readFileSync(filePath, "utf-8");
+  let removed = false;
 
-  // HTML: href="/ZenitNN/...", src="/ZenitNN/...", action="/ZenitNN/..."
+  // HTML: href, src, action
   content = content.replace(
     /(href|src|action)\s*=\s*["']\/ZenitNN\/([^"']+)["']/gi,
-    (_, attr, val) => `${attr}="/ZenitNN/${val}"`
+    (_, attr, val) => {
+      removed = true;
+      return `${attr}="/${val}"`;
+    }
   );
 
   // CSS: url('/ZenitNN/...')
   content = content.replace(
     /url\((['"]?)\/ZenitNN\/([^)'"]+)\1\)/gi,
-    (_, quote, val) => `url(${quote}/${val}${quote})`
+    (_, quote, val) => {
+      removed = true;
+      return `url(${quote}/${val}${quote})`;
+    }
   );
 
-  // JS: строки "/ZenitNN/..." внутри JS-файлов
+  // JS: строки "/ZenitNN/..." в кавычках
   if (filePath.endsWith(".js")) {
     content = content.replace(
       /(["'`])\/ZenitNN\/([^"'`]+?)\1/g,
-      (_, quote, val) => `${quote}/${val}${quote}`
+      (_, quote, val) => {
+        removed = true;
+        return `${quote}/${val}${quote}`;
+      }
     );
   }
 
   fs.writeFileSync(filePath, content, "utf-8");
-  console.log("❌ Префикс удалён в:", filePath);
+
+  if (removed) {
+    console.log("🧹 Префикс удалён в:", filePath);
+  } else {
+    console.log("📄 Префиксов не найдено в:", filePath);
+  }
 }
 
 function walk(dir) {
@@ -45,35 +59,45 @@ function walk(dir) {
     const fullPath = path.join(dir, file);
     const stat = fs.statSync(fullPath);
 
-    if (file === "unfix.js") return; // пропуск самого скрипта
+    if (["fix.js", "unfix.js"].includes(file)) return;
 
     if (stat.isDirectory()) {
       walk(fullPath);
-    } else if (exts.includes(path.extname(fullPath))) {
+    } else if (exts.includes(path.extname(fullPath).toLowerCase())) {
       processFile(fullPath);
     }
   });
 }
 
-// Удаление префиксов из файлов
-walk(path.resolve(__dirname));
+walk(process.cwd());
 
-// Удаление префиксов из news.json
+// Обработка news.json
 if (fs.existsSync(newsPath)) {
   const raw = fs.readFileSync(newsPath, "utf-8");
   const news = JSON.parse(raw);
+  let removed = false;
 
   news.forEach((item) => {
     if (item.cover && item.cover.startsWith(prefix)) {
       item.cover = removePrefix(item.cover);
+      removed = true;
     }
     if (Array.isArray(item.photos)) {
-      item.photos = item.photos.map((photo) =>
-        photo.startsWith(prefix) ? removePrefix(photo) : photo
-      );
+      item.photos = item.photos.map((photo) => {
+        if (photo.startsWith(prefix)) {
+          removed = true;
+          return removePrefix(photo);
+        }
+        return photo;
+      });
     }
   });
 
   fs.writeFileSync(newsPath, JSON.stringify(news, null, 2), "utf-8");
-  console.log("❌ Префикс удалён в:", newsPath);
+
+  if (removed) {
+    console.log("🧹 Префикс удалён в:", newsPath);
+  } else {
+    console.log("📄 Префиксов не найдено в:", newsPath);
+  }
 }

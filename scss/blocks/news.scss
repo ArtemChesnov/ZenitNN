@@ -1,6 +1,10 @@
 .news {
     &__wrapper {
-        margin-top: 60px;
+        margin-top: 120px;
+
+        @media (max-width:780px) {
+            margin-top: 60px;
+        }
     }
 
     &__track {

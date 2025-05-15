@@ -251,6 +251,10 @@ a {
     scrollbar-width: none;
   }
 }
+.home-mt {
+  margin-top: 60px !important;
+}
+
 .header {
   position: absolute;
   top: 0;
@@ -1008,6 +1012,15 @@ body.menu-open {
     width: 668px;
   }
 }
+@media (max-width: 470px) {
+  .hero__title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 120%;
+    font-style: normal;
+    width: 668px;
+  }
+}
 @media (max-width: 430px) {
   .hero__title {
     font-size: 17px;
@@ -1015,6 +1028,24 @@ body.menu-open {
     line-height: 120%;
     font-style: normal;
     width: 340px;
+  }
+}
+@media (max-width: 370px) {
+  .hero__title {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 120%;
+    font-style: normal;
+    width: auto;
+  }
+}
+@media (max-width: 370px) {
+  .hero__title {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 120%;
+    font-style: normal;
+    width: 300px;
   }
 }
 .hero__title-wrapper {
@@ -1163,7 +1194,7 @@ body.menu-open {
     flex-direction: column;
     align-items: center;
     gap: 16px;
-    padding: 50px 0 50px 0;
+    padding: 60px 0 60px 0;
   }
 }
 .advantages__card {
@@ -1226,6 +1257,11 @@ body.menu-open {
   position: absolute;
   width: 100%;
   height: 100%;
+}
+@media (max-width: 780px) {
+  .advantages__card-img {
+    width: 94%;
+  }
 }
 .advantages__card-text {
   position: relative;
@@ -1302,7 +1338,7 @@ body.menu-open {
   overflow: hidden;
   background-color: #CCAC48;
 }
-@media (max-width: 430px) {
+@media (max-width: 780px) {
   .running-line {
     margin-top: 60px;
   }
@@ -1373,11 +1409,20 @@ body.menu-open {
     transform: translateX(-100%);
   }
 }
-.coach__wrapper {
+.home-mt {
   margin-top: 60px;
+}
+
+.coach__wrapper {
+  margin-top: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media (max-width: 780px) {
+  .coach__wrapper {
+    margin-top: 60px;
+  }
 }
 .coach__title {
   font-size: 50px;
@@ -1928,7 +1973,7 @@ body.menu-open {
   margin-top: 120px;
   overflow: hidden;
 }
-@media (max-width: 360px) {
+@media (max-width: 780px) {
   .branches {
     margin-top: 60px;
   }
@@ -2149,7 +2194,7 @@ body.menu-open {
   position: relative;
   overflow: hidden;
 }
-@media (max-width: 430px) {
+@media (max-width: 780px) {
   .groups {
     margin-top: 60px;
   }
@@ -2793,7 +2838,12 @@ body.menu-open {
   }
 }
 .news__wrapper {
-  margin-top: 60px;
+  margin-top: 120px;
+}
+@media (max-width: 780px) {
+  .news__wrapper {
+    margin-top: 60px;
+  }
 }
 .news__track {
   display: grid;
@@ -2917,6 +2967,11 @@ body.menu-open {
 }
 .footer--news {
   margin-top: 120px;
+}
+@media (max-width: 780px) {
+  .footer--news {
+    margin-top: 60px;
+  }
 }
 .footer__background {
   width: 100%;
@@ -3988,7 +4043,6 @@ body.menu-open {
   align-items: center;
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
   background-color: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
@@ -5208,7 +5262,7 @@ body.menu-open {
 .news-home {
   margin-top: 120px;
 }
-@media (max-width: 430px) {
+@media (max-width: 780px) {
   .news-home {
     margin-top: 60px;
   }

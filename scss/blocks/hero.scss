@@ -68,9 +68,24 @@
             width: 668px;
         }
 
+        @media (max-width: 470px) {
+            @include font(20px, 700, 120%);
+            width: 668px;
+        }
+
         @media (max-width: 430px) {
             @include font(17px, 700, 120%);
             width: 340px;
+        }
+
+        @media (max-width: 370px) {
+            @include font(15px, 700, 120%);
+            width: auto;
+        }
+
+        @media (max-width: 370px) {
+            @include font(14px, 700, 120%);
+            width: 300px;
         }
 
         &-wrapper {

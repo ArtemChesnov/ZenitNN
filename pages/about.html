@@ -161,141 +161,8 @@
     </nav>
 
     <main>
-      <section
-        class="application"
-        aria-label="Форма заявки на тренировку"
-        aria-labelledby="application-title"
-      >
-        <div class="application__overlay" onclick="closeModal(event)">
-          <div
-            class="application__modal"
-            role="dialog"
-            aria-modal="true"
-            onclick="event.stopPropagation()"
-          >
-            <button
-              class="application__close-btn"
-              onclick="closeModal(event)"
-              aria-label="Закрыть форму"
-            >
-              &times;
-            </button>
-
-            <h2 class="application__form-title" id="application-title">
-              Запишитесь на бесплатное пробное занятие!
-            </h2>
-
-            <form
-              class="application__form form"
-              id="contactForm"
-              action="/ZenitNN/send.php"
-              method="POST"
-            >
-              <div class="form__wrapper">
-                <label class="form__label">
-                  <input
-                    class="form__input"
-                    type="text"
-                    name="name"
-                    placeholder="Ваше имя и фамилия*"
-                    required
-                  />
-                </label>
-                <label class="form__label">
-                  <input
-                    class="form__input"
-                    type="tel"
-                    name="phone"
-                    placeholder="Телефон в любом формате*"
-                    required
-                  />
-                </label>
-                <label class="form__label">
-                  <input
-                    class="form__input"
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    required
-                  />
-                </label>
-              </div>
-
-              <div class="form__select">
-                <label for="location" class="form__select-title"
-                  >Выберите детский центр</label
-                >
-                <select
-                  class="form__select-input"
-                  id="location"
-                  name="location"
-                  required
-                >
-                  <option
-                    class="form__select-option"
-                    value="Зенит - Чемпионика на Тимирязева"
-                  >
-                    Зенит - Чемпионика на Тимирязева
-                  </option>
-                  <option
-                    class="form__select-option"
-                    value="Зенит - Чемпионика на Бринского"
-                  >
-                    Зенит - Чемпионика на Бринского
-                  </option>
-                  <option
-                    class="form__select-option"
-                    value="Зенит - Чемпионика на Школьной"
-                  >
-                    Зенит - Чемпионика на Школьной
-                  </option>
-                </select>
-              </div>
-
-              <button class="form__button" type="submit">
-                Записаться на пробную тренировку
-              </button>
-
-              <div
-                id="response"
-                class="form__response"
-                aria-live="polite"
-              ></div>
-
-              <p class="form__politic">
-                Нажимая на кнопку, вы даёте согласие на обработку персональных
-                данных и соглашаетесь с
-                <a
-                  class="form__politic-link"
-                  href="/ZenitNN/pages/politic.html"
-                  target="_blank"
-                  >политикой конфиденциальности</a
-                >
-              </p>
-            </form>
-          </div>
-        </div>
-      </section>
-
-      <div
-        id="preloader"
-        role="presentation"
-        aria-hidden="true"
-        aria-label="Прелоадер"
-      >
-        <div class="ball-wrapper">
-          <div class="ball-inner">
-            <div class="ball"></div>
-            <div class="dust dust-1"></div>
-            <div class="dust dust-2"></div>
-            <div class="dust dust-3"></div>
-          </div>
-          <div class="shadow"></div>
-        </div>
-      </div>
-
       <section class="about" aria-label="О школе">
-        <div class="about__wrapper container">
+        <div class="about__wrapper container home-mt">
           <img
             class="about__img-big"
             src="/ZenitNN/img/about-scool-1.webp"
@@ -377,7 +244,135 @@
         </div>
       </section>
     </main>
+    <section
+      class="application"
+      aria-label="Форма заявки на тренировку"
+      aria-labelledby="application-title"
+    >
+      <div class="application__overlay" onclick="closeModal(event)">
+        <div
+          class="application__modal"
+          role="dialog"
+          aria-modal="true"
+          onclick="event.stopPropagation()"
+        >
+          <button
+            class="application__close-btn"
+            onclick="closeModal(event)"
+            aria-label="Закрыть форму"
+          >
+            &times;
+          </button>
 
+          <h2 class="application__form-title" id="application-title">
+            Запишитесь на бесплатное пробное занятие!
+          </h2>
+
+          <form
+            class="application__form form"
+            id="contactForm"
+            action="/ZenitNN/send.php"
+            method="POST"
+          >
+            <div class="form__wrapper">
+              <label class="form__label">
+                <input
+                  class="form__input"
+                  type="text"
+                  name="name"
+                  placeholder="Ваше имя и фамилия*"
+                  required
+                />
+              </label>
+              <label class="form__label">
+                <input
+                  class="form__input"
+                  type="tel"
+                  name="phone"
+                  placeholder="Телефон в любом формате*"
+                  required
+                />
+              </label>
+              <label class="form__label">
+                <input
+                  class="form__input"
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  required
+                />
+              </label>
+            </div>
+
+            <div class="form__select">
+              <label for="location" class="form__select-title"
+                >Выберите детский центр</label
+              >
+              <select
+                class="form__select-input"
+                id="location"
+                name="location"
+                required
+              >
+                <option
+                  class="form__select-option"
+                  value="Зенит - Чемпионика на Тимирязева"
+                >
+                  Зенит - Чемпионика на Тимирязева
+                </option>
+                <option
+                  class="form__select-option"
+                  value="Зенит - Чемпионика на Бринского"
+                >
+                  Зенит - Чемпионика на Бринского
+                </option>
+                <option
+                  class="form__select-option"
+                  value="Зенит - Чемпионика на Школьной"
+                >
+                  Зенит - Чемпионика на Школьной
+                </option>
+              </select>
+            </div>
+
+            <button class="form__button" type="submit">
+              Записаться на пробную тренировку
+            </button>
+
+            <div id="response" class="form__response" aria-live="polite"></div>
+
+            <p class="form__politic">
+              Нажимая на кнопку, вы даёте согласие на обработку персональных
+              данных и соглашаетесь с
+              <a
+                class="form__politic-link"
+                href="/ZenitNN/pages/politic.html"
+                target="_blank"
+                >политикой конфиденциальности</a
+              >
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div
+      id="preloader"
+      role="presentation"
+      aria-hidden="true"
+      aria-label="Прелоадер"
+    >
+      <div class="ball-wrapper">
+        <div class="ball-inner">
+          <div class="ball"></div>
+          <div class="dust dust-1"></div>
+          <div class="dust dust-2"></div>
+          <div class="dust dust-3"></div>
+        </div>
+        <div class="shadow"></div>
+      </div>
+    </div>
+    
     <footer
       class="footer"
       aria-labelledby="footer-title"

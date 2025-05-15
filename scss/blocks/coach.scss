@@ -1,10 +1,14 @@
 .coach {
 
     &__wrapper {
-        margin-top: 60px;
+        margin-top: 120px;
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        @media (max-width:780px) {
+            margin-top: 60px;
+        }
 
     }
 
