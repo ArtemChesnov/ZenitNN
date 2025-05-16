@@ -7,7 +7,7 @@ const img1 = document.getElementById("img1");
 const img2 = document.getElementById("img2");
 
 function preloadFirstImage() {
-  img1.src = images[0];
+  
   img1.classList.add("hero__background-active");
 }
 
