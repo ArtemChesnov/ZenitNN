@@ -851,7 +851,7 @@
                 href="https://t.me/zenit_championika_nn"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Телеграм"
+                aria-label=""
               >
                 <img src="/ZenitNN/img/telegram-icon.svg" alt="Телеграм" />
               </a>
@@ -861,7 +861,7 @@
                 href="https://www.instagram.com/zenit_championika_nn?igsh=MTF6cTZxNWQ1eG8zOQ&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Инстаграм"
+                aria-label=""
               >
                 <img src="/ZenitNN/img/instagram-icon.svg" alt="Инстаграм" />
               </a>
@@ -873,7 +873,7 @@
                 rel="noopener noreferrer"
                 aria-label="Вконтакте"
               >
-                <img src="/ZenitNN/img/vk-icon.svg" alt="Вконтакте" />
+                <img src="/ZenitNN/img/vk-icon.svg" alt="" />
               </a>
             </div>
 
@@ -926,8 +926,10 @@
       <div class="application__overlay" onclick="closeModal(event)">
         <div
           class="application__modal"
+          class="application__modal"
           role="dialog"
           aria-modal="true"
+          aria-labelledby="application-title"
           onclick="event.stopPropagation()"
         >
           <button
@@ -1030,12 +1032,7 @@
       </div>
     </section>
 
-    <div
-      id="preloader"
-      role="presentation"
-      aria-hidden="true"
-      aria-label="Прелоадер"
-    >
+    <div id="preloader" aria-hidden="true">
       <div class="ball-wrapper">
         <div class="ball-inner">
           <div class="ball"></div>
