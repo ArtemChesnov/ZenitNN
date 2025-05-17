@@ -345,11 +345,10 @@
         gap: 42px;
         margin-top: 180px;
 
-        @media (max-width: 376px) {
+        @media (max-width: 400px) {
           gap: 32px;
-          margin-top: 130px;
+          margin-top: 140px;
         }
-
       }
 
 
