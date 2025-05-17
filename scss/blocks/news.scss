@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .news {
     &__wrapper {
         margin-top: 120px;
@@ -95,7 +97,7 @@
         transition: background-color 0.3s ease;
 
         &:hover {
-            background-color: darken(#3ca0db, 10%);
+            background-color: color.adjust($blue, $lightness: -10%);
         }
 
         &.active {
