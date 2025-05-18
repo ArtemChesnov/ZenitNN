@@ -1,4 +1,4 @@
-fetch("/ZenitNN/data/news.json")
+fetch("/data/news.json")
   .then((response) => response.json())
   .then((newsData) => {
     const container = document.querySelector(".news-home__container");
@@ -16,7 +16,7 @@ fetch("/ZenitNN/data/news.json")
 function createSlide(news) {
   const link = document.createElement("a");
   link.className = "news-home__link";
-  link.href = `/ZenitNN/pages/news-posts/${news.id}.html`;
+  link.href = `/pages/news-posts/${news.id}.html`;
 
   const img = document.createElement("img");
   img.className = "news-home__img";
