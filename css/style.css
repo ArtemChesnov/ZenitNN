@@ -3691,7 +3691,7 @@ body.menu-open {
 .ball {
   width: 60px;
   height: 60px;
-  background-image: url("/img/soccer_ball.svg");
+  background-image: url("/ZenitNN/img/soccer_ball.svg");
   background-size: contain;
   background-repeat: no-repeat;
   transform-origin: center center;

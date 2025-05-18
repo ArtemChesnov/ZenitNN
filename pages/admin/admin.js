@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
       list.appendChild(skeleton);
     }
     try {
-      const res = await fetch("/data/news.json");
+      const res = await fetch("/ZenitNN/data/news.json");
       fullNewsList = await res.json();
       fullNewsList.reverse();
       renderNewsPage(adminCurrentPage);
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
       div.innerHTML = `<img src="${n.cover}" alt="${n.title}">
         <h3>${n.title}</h3>
         <div class="admin-panel__news-card-buttons">
-          <a href="/pages/news-posts/${n.id}.html" target="_blank">Открыть</a>
+          <a href="/ZenitNN/pages/news-posts/${n.id}.html" target="_blank">Открыть</a>
           <button class="delete delete-btn">Удалить</button>
         </div>`;
       list.appendChild(div);

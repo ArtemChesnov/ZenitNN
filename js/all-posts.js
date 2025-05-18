@@ -1,4 +1,4 @@
-fetch("/data/news.json")
+fetch("/ZenitNN/data/news.json")
   .then((response) => response.json())
   .then((newsData) => {
     const slider = document.getElementById("news");
@@ -31,7 +31,7 @@ fetch("/data/news.json")
       pageItems.forEach((news, index) => {
         const slide = document.createElement("a");
         slide.className = "news__item";
-        slide.href = `/pages/news-posts/${news.id}.html`;
+        slide.href = `/ZenitNN/pages/news-posts/${news.id}.html`;
 
         slide.style.opacity = "0";
         slide.style.transform = "translateY(20px)";
