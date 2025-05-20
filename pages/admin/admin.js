@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
       list.appendChild(skeleton);
     }
     try {
-      const res = await fetch("/ZenitNN/data/news.json");
+      const res = await fetch("/data/news.json");
       fullNewsList = await res.json();
       fullNewsList.reverse();
       renderNewsPage(adminCurrentPage);
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
       div.innerHTML = `<img src="${n.cover}" alt="${n.title}">
         <h3>${n.title}</h3>
         <div class="admin-panel__news-card-buttons">
-          <a href="/ZenitNN/pages/news-posts/${n.id}.html" target="_blank">Открыть</a>
+          <a href="/pages/news-posts/${n.id}.html" target="_blank">Открыть</a>
           <button class="delete delete-btn">Удалить</button>
         </div>`;
       list.appendChild(div);
@@ -264,7 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
     progressWrapper.style.display = "block";
     progressWrapper.style.opacity = "1";
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", "/ZenitNN/pages/admin/add.php");
+    xhr.open("POST", "/pages/admin/add.php");
     xhr.upload.onprogress = (event) => {
       if (event.lengthComputable) {
         const percent = Math.round((event.loaded / event.total) * 100);
