@@ -264,7 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
     progressWrapper.style.display = "block";
     progressWrapper.style.opacity = "1";
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", "add.php");
+    xhr.open("POST", "/ZenitNN/pages/admin/add.php");
     xhr.upload.onprogress = (event) => {
       if (event.lengthComputable) {
         const percent = Math.round((event.loaded / event.total) * 100);

@@ -1,6 +1,11 @@
 <?php
 require_once __DIR__ . '/auth.php';
 
+if ($_POST['csrf_token'] !== ($_SESSION['csrf'] ?? '')) {
+  http_response_code(403);
+  exit('Неверный CSRF токен');
+}
+
 $jsonFile = __DIR__ . '/../../data/news.json';
 $galleryBasePath = __DIR__ . '/../../img/gallery/';
 $newsPagesPath = __DIR__ . '/../../pages/news-posts/';
@@ -54,7 +59,7 @@ if (isset($_FILES['cover']) && $_FILES['cover']['error'] === UPLOAD_ERR_OK) {
 
 // Обработка изображений
 $photoRelativePaths = [];
-if (!empty($_FILES['images']['tmp_name'])) {
+if (!empty($_FILES['images']) && is_array($_FILES['images']['tmp_name'])) {
   foreach ($_FILES['images']['tmp_name'] as $i => $tmp) {
     if ($_FILES['images']['error'][$i] === UPLOAD_ERR_OK) {
       $ext = pathinfo($_FILES['images']['name'][$i], PATHINFO_EXTENSION);
@@ -73,6 +78,12 @@ if (!empty($_FILES['images']['tmp_name'])) {
       $photoRelativePaths[] = "/img/gallery/$id/photos/$fileName";
     }
   }
+}
+
+
+if ($_FILES['cover']['error'] !== UPLOAD_ERR_OK) {
+  http_response_code(500);
+  exit("Ошибка при загрузке файла: код " . $_FILES['cover']['error']);
 }
 
 // Добавление новости в JSON
@@ -99,6 +110,11 @@ $pageContent = str_replace(
   $template
 );
 file_put_contents($newsPagesPath . "$id.html", $pageContent);
+
+if (!file_put_contents($newsPagesPath . "$id.html", $pageContent)) {
+  http_response_code(500);
+  exit("Ошибка записи HTML страницы");
+}
 
 http_response_code(200);
 echo "Success";
