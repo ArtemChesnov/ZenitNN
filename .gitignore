@@ -1,14 +1,32 @@
-# .hintrc
+# Системные и редакторские файлы
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
 
-# send.php
-# mail_config.php
+# Конфиги и приватные файлы
+.env
+.hintrc
+mail_config.php
 
-# pages/admin/
+# Вспомогательные скрипты
+fix.js
+unfix.js
+minify-css.js
 
-# PHPMailer/
+# Временные файлы и резервные копии
+*.bak
+*.tmp
+*.swp
 
-# scss/
+# Исходники, которые не нужны на GitHub
+scss/
 
-# fix.js
 
-# unfix.js
+# GitHub Actions (оставляем, если используешь)
+# .github/
+
+
+
+deploy.yml
