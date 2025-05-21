@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const formData = new FormData();
         formData.append("id", id);
         formData.append("csrf_token", csrfInput.value);
-        const res = await fetch("delete.php", {
+        const res = await fetch("/pages/admin/delete.php", {
           method: "POST",
           body: formData,
         });
