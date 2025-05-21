@@ -14,7 +14,7 @@ let currentIndex = 0;
 let imageList = [];
 
 const path = window.location.pathname;
-const galleryId = path.match(/\/([\w]+)\.html$/)?.[1];
+const galleryId = path.match(/\/news\/([\w-]+)$/)?.[1];
 
 fetch("/data/get-news.php", {
   headers: {

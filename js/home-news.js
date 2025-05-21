@@ -20,7 +20,7 @@ fetch("/data/get-news.php", {
 function createSlide(news) {
   const link = document.createElement("a");
   link.className = "news-home__link";
-  link.href = `/pages/news-posts/${news.id}.html`;
+  link.href = `/pages/news-posts/${news.id}`;
 
   const img = document.createElement("img");
   img.className = "news-home__img";
