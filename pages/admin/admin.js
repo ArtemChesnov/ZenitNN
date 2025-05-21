@@ -62,10 +62,16 @@ document.addEventListener("DOMContentLoaded", () => {
       skeleton.className = "skeleton-card";
       list.appendChild(skeleton);
     }
+
     try {
-      const res = await fetch("/data/news.json");
-      fullNewsList = await res.json();
-      fullNewsList.reverse();
+      const res = await fetch("/data/get-news.php", {
+        headers: { "X-Requested-With": "XMLHttpRequest" },
+      });
+
+      if (!res.ok) throw new Error("Сервер вернул ошибку");
+
+      const data = await res.json();
+      fullNewsList = Array.isArray(data) ? data.reverse() : [];
       renderNewsPage(adminCurrentPage);
       renderAdminPagination();
     } catch (err) {

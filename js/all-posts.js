@@ -1,4 +1,4 @@
-fetch("/data/news.json")
+fetch("/data/get-news.php")
   .then((response) => response.json())
   .then((newsData) => {
     const slider = document.getElementById("news");
