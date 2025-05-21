@@ -1,9 +1,7 @@
 RewriteEngine On
 
-RewriteCond %{HTTPS} off
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-RewriteCond %{HTTP_HOST} ^fczenit-schoolnn\.ru$ [NC]
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
 RewriteRule ^ https://www.fczenit-schoolnn.ru%{REQUEST_URI} [L,R=301]
 
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -29,4 +27,5 @@ RewriteRule ^news/([a-zA-Z0-9_-]+)$ /pages/news-posts/$1.html [L]
 </FilesMatch>
 
 <Files "mail_config.php">
-  Require
+  Require all denied
+</Files>
