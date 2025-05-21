@@ -1,16 +1,23 @@
 RewriteEngine On
 
-RewriteCond %{HTTPS} off [OR]
+# 1. Редирект на HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. Редирект на www
 RewriteCond %{HTTP_HOST} ^fczenit-schoolnn\.ru$ [NC]
 RewriteRule ^ https://www.fczenit-schoolnn.ru%{REQUEST_URI} [L,R=301]
 
+# 3. Убираем слэш на конце
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.+)/$ /$1 [R=301,L]
 
+# 4. Если это файл или папка — не обрабатывать дальше
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
+# 5. ЧПУ маршруты
 RewriteRule ^about$ /pages/about.html [L]
 RewriteRule ^coaches$ /pages/coach.html [L]
 RewriteRule ^news$ /pages/news.html [L]
@@ -22,6 +29,7 @@ RewriteRule ^privacy-policy$ /pages/politic.html [L]
 RewriteRule ^admin$ /pages/admin/admin.php [L]
 RewriteRule ^news/([a-zA-Z0-9_-]+)$ /pages/news-posts/$1.html [L]
 
+# Защита конфигурации
 <FilesMatch "^\.ht">
   Require all denied
 </FilesMatch>
