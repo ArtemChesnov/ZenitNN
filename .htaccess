@@ -1,5 +1,14 @@
 RewriteEngine On
 
+Redirect 301 /pages/about.html /about
+Redirect 301 /pages/coach.html /coaches
+Redirect 301 /pages/news.html /news
+Redirect 301 /pages/teams.html /teams
+Redirect 301 /pages/junior.html /junior-group
+Redirect 301 /pages/middle.html /middle-group
+Redirect 301 /pages/senior.html /senior-group
+Redirect 301 /pages/politic.html /privacy-policy
+
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
