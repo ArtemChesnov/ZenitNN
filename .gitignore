@@ -26,7 +26,3 @@ scss/
 
 # GitHub Actions (оставляем, если используешь)
 # .github/
-
-
-
-deploy.yml

@@ -1,0 +1,37 @@
+name: Deploy
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v3
+
+            - name: Upload via FTP
+              uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+              with:
+                  server: ${{ secrets.FTP_HOST }}
+                  username: ${{ secrets.FTP_USER }}
+                  password: ${{ secrets.FTP_PASS }}
+                  protocol: ftp
+                  server-dir: /www/fczenit-schoolnn.ru/
+                  local-dir: ./
+                  exclude: |
+                      **/.git*
+                      **/.github*
+                      **/node_modules/**
+                      **/scss/**
+                      **/.hintrc
+                      **/.idea/**
+                      **/README.md
+                      **/fix.js
+                      **/unfix.js
+                      **/minify-css.js
+                      **/mail_config.php
+                      **/data/news.json
