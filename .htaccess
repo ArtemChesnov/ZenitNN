@@ -1,0 +1,31 @@
+RewriteEngine On
+
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^ https://www.fczenit-schoolnn.ru%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+RewriteRule ^about$ /pages/about.html [L]
+RewriteRule ^coaches$ /pages/coach.html [L]
+RewriteRule ^news$ /pages/news.html [L]
+RewriteRule ^teams$ /pages/teams.html [L]
+RewriteRule ^junior-group$ /pages/junior.html [L]
+RewriteRule ^middle-group$ /pages/middle.html [L]
+RewriteRule ^senior-group$ /pages/senior.html [L]
+RewriteRule ^privacy-policy$ /pages/politic.html [L]
+RewriteRule ^admin$ /pages/admin/admin.php [L]
+RewriteRule ^news/([a-zA-Z0-9_-]+)$ /pages/news-posts/$1.html [L]
+
+<FilesMatch "^\.ht">
+  Require all denied
+</FilesMatch>
+
+<Files "mail_config.php">
+  Require all denied
+</Files>

@@ -1,0 +1,11 @@
+<FilesMatch "^(admin\.php|admin\.js)$">
+    Require all granted
+</FilesMatch>
+
+<FilesMatch "\.(php|html)$">
+    Require all denied
+</FilesMatch>
+
+<Files config.php>
+    Require all denied
+</Files>
