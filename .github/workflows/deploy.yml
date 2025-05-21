@@ -23,7 +23,7 @@ jobs:
           server-dir: /www/fczenit-schoolnn.ru/
           local-dir: ./
           exclude: |
-            **/.git*
+            **/.git/**
             **/.github/**
             **/.hintrc
             **/.idea/**
