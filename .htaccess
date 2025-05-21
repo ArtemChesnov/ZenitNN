@@ -1,8 +1,11 @@
 RewriteEngine On
 
-# Редиректим сразу и HTTP → HTTPS и без www → www
-RewriteCond %{HTTPS} off [OR]
-RewriteCond %{HTTP_HOST} !^www\. [NC]
+# Редирект с http на https
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Редирект с fczenit-schoolnn.ru на www.fczenit-schoolnn.ru (ТОЛЬКО если НЕ www)
+RewriteCond %{HTTP_HOST} ^fczenit-schoolnn\.ru$ [NC]
 RewriteRule ^ https://www.fczenit-schoolnn.ru%{REQUEST_URI} [L,R=301]
 
 # Убираем завершающий слеш у адресов
