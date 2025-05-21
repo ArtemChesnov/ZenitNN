@@ -16,7 +16,11 @@ let imageList = [];
 const path = window.location.pathname;
 const galleryId = path.match(/\/([\w]+)\.html$/)?.[1];
 
-fetch("/data/get-news.php")
+fetch("/data/get-news.php", {
+  headers: {
+    "X-Requested-With": "XMLHttpRequest",
+  },
+})
   .then((res) => res.json())
   .then((data) => {
     const gallery = data.find((gallery) => gallery.id === galleryId);

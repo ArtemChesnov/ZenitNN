@@ -1,4 +1,8 @@
-fetch("/data/get-news.php")
+fetch("/data/get-news.php", {
+  headers: {
+    "X-Requested-With": "XMLHttpRequest",
+  },
+})
   .then((response) => response.json())
   .then((newsData) => {
     const container = document.querySelector(".news-home__container");
