@@ -9,7 +9,7 @@ $config = require 'config.php';
 if (isset($_SESSION['LAST_ACTIVITY']) && time() - $_SESSION['LAST_ACTIVITY'] > $timeout) {
     session_unset();
     session_destroy();
-    header("Location: admin.php");
+    header("Location: admin");
     exit;
 }
 $_SESSION['LAST_ACTIVITY'] = time();
@@ -17,7 +17,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
 // Обработка выхода
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['logout'])) {
     session_destroy();
-    header("Location: admin.php");
+    header("Location: admin");
     exit;
 }
 
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'], $_POST['pass
     } elseif ($login === $config['admin_login'] && password_verify($password, $config['admin_hash'])) {
         $_SESSION['admin_logged_in'] = true;
         $_SESSION['csrf'] = bin2hex(random_bytes(32));
-        header("Location: admin.php");
+        header("Location: admin");
         exit;
     } else {
         $login_error = "Неверный логин или пароль.";

@@ -4,6 +4,7 @@ Thumbs.db
 .idea/
 .vscode/
 *.log
+.git
 
 # Конфиги и приватные файлы
 .env

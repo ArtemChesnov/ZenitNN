@@ -1,23 +1,19 @@
 RewriteEngine On
 
-# Редирект с http на https
-RewriteCond %{HTTPS} off
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# Редирект с fczenit-schoolnn.ru на www.fczenit-schoolnn.ru (ТОЛЬКО если НЕ www)
-RewriteCond %{HTTP_HOST} ^fczenit-schoolnn\.ru$ [NC]
-RewriteRule ^ https://www.fczenit-schoolnn.ru%{REQUEST_URI} [L,R=301]
-
-# Убираем завершающий слеш у адресов
+# Убираем завершённый слэш у адресов
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.+)/$ /$1 [R=301,L]
 
-# Если файл или папка существует, ничего не делаем
+# Убираем .html из URL
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# Если файл или папка существует — пропускаем
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Красивые ЧПУ (человекопонятные урлы)
+# ЧПУ маршруты
 RewriteRule ^about$ /pages/about.html [L]
 RewriteRule ^coaches$ /pages/coach.html [L]
 RewriteRule ^news$ /pages/news.html [L]
@@ -29,7 +25,7 @@ RewriteRule ^privacy-policy$ /pages/politic.html [L]
 RewriteRule ^admin$ /pages/admin/admin.php [L]
 RewriteRule ^news/([a-zA-Z0-9_-]+)$ /pages/news-posts/$1.html [L]
 
-# Безопасность: запрет на доступ к скрытым и чувствительным файлам
+# Защита системных файлов
 <FilesMatch "^\.ht">
   Require all denied
 </FilesMatch>
