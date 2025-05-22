@@ -14,6 +14,7 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
 # ЧПУ маршруты
+RewriteRule ^home$ index.html [L]
 RewriteRule ^about$ /pages/about.html [L]
 RewriteRule ^coaches$ /pages/coach.html [L]
 RewriteRule ^news$ /pages/news.html [L]
