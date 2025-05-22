@@ -2,11 +2,8 @@ User-agent: *
 Disallow: /pages/admin/
 Disallow: /send.php
 Disallow: /data/
-Disallow: /scss/
-Disallow: /fix.js
-Disallow: /unfix.js
-
-Allow: /
+Disallow: /mail_config.php
 
 Sitemap: https://www.fczenit-schoolnn.ru/sitemap.xml
 Host: www.fczenit-schoolnn.ru
+
