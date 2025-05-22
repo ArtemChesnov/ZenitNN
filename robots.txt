@@ -9,4 +9,4 @@ Disallow: /unfix.js
 Allow: /
 
 Sitemap: https://www.fczenit-schoolnn.ru/sitemap.xml
-Host: https://www.fczenit-schoolnn.ru
+Host: www.fczenit-schoolnn.ru
