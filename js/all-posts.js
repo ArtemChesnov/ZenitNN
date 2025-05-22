@@ -35,7 +35,7 @@ fetch("/data/get-news.php", {
       pageItems.forEach((news, index) => {
         const slide = document.createElement("a");
         slide.className = "news__item";
-        slide.href = `/pages/news-posts/${news.id}`;
+        slide.href = `/news/${news.id}`;
 
         slide.style.opacity = "0";
         slide.style.transform = "translateY(20px)";
