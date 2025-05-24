@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   const path = window.location.pathname;
 
-  const scrollToIdWithOffset = (id) => {
+  const scrollToIdWithOffset = (id, offset = 120) => {
     const target = document.getElementById(id);
     if (target) {
       const topOffsetPosition =
-        target.getBoundingClientRect().top + window.pageYOffset;
+        target.getBoundingClientRect().top + window.pageYOffset + offset;
 
       window.scrollTo({
         top: topOffsetPosition,
