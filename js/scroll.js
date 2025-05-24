@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const path = window.location.pathname;
 
-  const scrollToIdWithOffset = (id, offset = 300) => {
+  const scrollToIdWithOffset = (id, offset = 100) => {
     const target = document.getElementById(id);
     if (target) {
       const topOffsetPosition =
