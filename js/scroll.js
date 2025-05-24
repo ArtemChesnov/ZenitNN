@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const target = document.getElementById(id);
     if (target) {
       const topOffsetPosition =
-        target.getBoundingClientRect().top + window.pageYOffset + offset;
+        target.getBoundingClientRect().top + window.pageYOffset - offset;
 
       window.scrollTo({
         top: topOffsetPosition,
