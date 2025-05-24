@@ -1,12 +1,8 @@
-document.querySelectorAll(".scroll-link").forEach((link) => {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+  const path = window.location.pathname;
 
-    const targetId = this.getAttribute("href").substring(1);
-    const target = document.getElementById(targetId);
-
-    const offset = parseInt(this.dataset.offset) || 300;
-
+  const scrollToIdWithOffset = (id, offset = 300) => {
+    const target = document.getElementById(id);
     if (target) {
       const topOffsetPosition =
         target.getBoundingClientRect().top + window.pageYOffset - offset;
@@ -16,5 +12,8 @@ document.querySelectorAll(".scroll-link").forEach((link) => {
         behavior: "smooth",
       });
     }
-  });
+  };
+
+  if (path === "/branches") scrollToIdWithOffset("branches");
+  if (path === "/groups") scrollToIdWithOffset("groups");
 });
