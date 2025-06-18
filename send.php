@@ -1,6 +1,27 @@
 <?php
 session_start();
 
+function logFormError($message)
+{
+    $logDir = __DIR__ . '/logs';
+    $logFile = $logDir . '/form_errors.log';
+
+    // Создаём папку, если нет
+    if (!file_exists($logDir)) {
+        mkdir($logDir, 0775, true);
+    }
+
+    // Лог в формате: [дата] IP: сообщение
+    $logEntry = sprintf(
+        "[%s] [%s] %s\n",
+        date("Y-m-d H:i:s"),
+        $_SERVER['REMOTE_ADDR'] ?? 'unknown',
+        $message
+    );
+
+    file_put_contents($logFile, $logEntry, FILE_APPEND);
+}
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -47,7 +68,7 @@ try {
     $mail->Port = $config['port'];
 
     $mail->setFrom($config['username'], 'Сайт Зенит - Чемпионика');
-    $mail->addAddress('Zenit.info25@mail.ru'); // получатель
+    $mail->addAddress('jaksan37@gmail.com'); // получатель
 
     $mail->CharSet = 'UTF-8';
     $mail->Subject = 'Заявка на пробную тренировку';
@@ -62,6 +83,7 @@ EOT;
     echo "Спасибо! Ваша заявка отправлена.";
 } catch (Exception $e) {
     http_response_code(500);
-    echo "Ошибка при отправке: {$mail->ErrorInfo}";
-    error_log("Ошибка при отправке: {$mail->ErrorInfo}");
+    $errorMsg = "Ошибка при отправке: {$mail->ErrorInfo}";
+    logFormError($errorMsg);
+    echo $errorMsg;
 }
