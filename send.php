@@ -47,7 +47,7 @@ try {
     $mail->Port = $config['port'];
 
     $mail->setFrom($config['username'], 'Сайт Зенит - Чемпионика');
-    $mail->addAddress('jaksan37@gmail.com'); // получатель
+    $mail->addAddress('Zenit.info25@mail.ru'); // получатель
 
     $mail->CharSet = 'UTF-8';
     $mail->Subject = 'Заявка на пробную тренировку';
