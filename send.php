@@ -63,4 +63,5 @@ EOT;
 } catch (Exception $e) {
     http_response_code(500);
     echo "Ошибка при отправке: {$mail->ErrorInfo}";
+    error_log("Ошибка при отправке: {$mail->ErrorInfo}");
 }
