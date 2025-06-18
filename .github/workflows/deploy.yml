@@ -34,3 +34,4 @@ jobs:
             **/minify-css.js
             **/mail_config.php
             **/data/news.json
+            **/img/**
